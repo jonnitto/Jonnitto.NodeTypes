@@ -25,8 +25,6 @@
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h3'
               h4:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h4'
-              h5:
-                label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h5'
 
 'Jonnitto.NodeTypes:HeadlineTagStyleMixin':
   abstract: TRUE
@@ -55,5 +53,3 @@
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h3'
               h4:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h4'
-              h5:
-                label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h5'

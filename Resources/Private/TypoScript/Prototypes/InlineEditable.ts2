@@ -15,7 +15,7 @@ prototype(NT:InlineEditable) < prototype(TS:Tag) {
 	renderElement = TS:Case {
 		isArray {
 			condition = ${Type.isArray(neededPropertiesArray)}
-			renderer = ${q(node).is('[' + Array.join(neededPropertiesArray, '],[') + ']')}
+			renderer = ${q(node).is('[' + Array.join(neededPropertiesArray, '!=""],[') + '!=""]')}
 		}
 		default {
 			condition = true

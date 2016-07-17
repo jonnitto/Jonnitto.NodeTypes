@@ -1,0 +1,5 @@
+prototype(NT:Text) < prototype(NT:InlineEditableTag) {
+	inlineTag = 'div'
+
+	@process.converturis = ConvertUris
+}

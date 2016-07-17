@@ -80,7 +80,7 @@
       ui:
         inlineEditable: TRUE
         aloha:
-          placeholder: i18n
+          placeholder: 'Jonnitto.NodeTypes:NodeTypes.LoremIpsum:placeholder'
           alignment: []
           autoparagraph: TRUE
           format:

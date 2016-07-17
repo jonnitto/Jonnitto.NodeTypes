@@ -5,13 +5,20 @@ Jonnitto.NodeTypes
 [![Total Downloads](https://poser.pugx.org/jonnitto/nodetypes/downloads)](https://packagist.org/packages/jonnitto/nodetypes)
 [![License](https://poser.pugx.org/jonnitto/nodetypes/license)](https://packagist.org/packages/jonnitto/nodetypes)
 
-Some NodeTypes for the greatest Content System on earth: [Neos](https://www.neos.io). Work in progress.
+Some NodeTypes for the greatest Content System on earth: [Neos](https://www.neos.io). The Elements only get rendered of there is any content.  
+Work in progress.
 
 Replacement for Neos.NodeTypes
 ------------------------------
 
 * Headline
 	* Without Aloha, you can choose markup, style, alignment a link in the inspector. The headline tag is the outer element. In that way, all the css stylings get easier.
+* Text
+
+New NodeTypes
+-------------
+
+* Button
 
 
 License
