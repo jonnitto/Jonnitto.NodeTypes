@@ -12,6 +12,9 @@ Jonnitto:
   NodeTypes:
     Headline:
       defaultTagName: h2
+    Button:
+      defaultClassName: btn
+      defaultStyle: secondary
     container: container
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
     externalTarget: '_blank'

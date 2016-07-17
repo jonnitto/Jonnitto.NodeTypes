@@ -8,26 +8,29 @@
 			<trans-unit id="properties.alignment.selectBoxEditor.placeholder" xml:space="preserve">
 				<source>Standard</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.left" xml:space="preserve">
+			<trans-unit id="left" xml:space="preserve">
 				<source>Links</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.center" xml:space="preserve">
+			<trans-unit id="center" xml:space="preserve">
 				<source>Zentriert</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.right" xml:space="preserve">
+			<trans-unit id="right" xml:space="preserve">
 				<source>Rechts</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.floatLeft" xml:space="preserve">
+			<trans-unit id="floatLeft" xml:space="preserve">
 				<source>Links umfliessen</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.floatRight" xml:space="preserve">
+			<trans-unit id="floatRight" xml:space="preserve">
 				<source>Rechts umfliessen</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.top" xml:space="preserve">
+			<trans-unit id="top" xml:space="preserve">
 				<source>Oben</source>
 			</trans-unit>
-			<trans-unit id="properties.alignment.selectBoxEditor.values.bottom" xml:space="preserve">
+			<trans-unit id="bottom" xml:space="preserve">
 				<source>Unten</source>
+			</trans-unit>
+			<trans-unit id="bleed" xml:space="preserve">
+				<source>Volle Breite</source>
 			</trans-unit>
 		</body>
 	</file>

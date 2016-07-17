@@ -23,7 +23,18 @@
         inlineEditable: TRUE
         aloha:
           placeholder: i18n
-          format: []
+          format:
+            sub: TRUE
+            sup: TRUE
+            strong: FALSE
+            em: FALSE
+            p: FALSE
+            h1: FALSE
+            h2: FALSE
+            h3: FALSE
+            h4: FALSE
+            h5: FALSE
+            removeFormat: FALSE
           table: []
           link: []
           list: []
@@ -41,7 +52,18 @@
         inlineEditable: TRUE
         aloha:
           placeholder: i18n
-          format: []
+          format:
+            sub: TRUE
+            sup: TRUE
+            strong: FALSE
+            em: FALSE
+            p: FALSE
+            h1: FALSE
+            h2: FALSE
+            h3: FALSE
+            h4: FALSE
+            h5: FALSE
+            removeFormat: FALSE
           table: []
           link: []
           list: []
@@ -50,39 +72,36 @@
             button: FALSE
             formatlessPasteOption: TRUE
 
-'Jonnitto.NodeTypes:AlignmentMixin':
+'Jonnitto.NodeTypes:TextMixin':
   abstract: TRUE
-  superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': TRUE
   properties:
-    alignment:
+    text:
       type: string
-      defaultValue: ''
       ui:
-        label: i18n
-        reloadIfChanged: TRUE
-        inspector:
-          group: settings
-          position: 300
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            placeholder: i18n
-            allowEmpty: TRUE
-            values:
-              left:
-                label: i18n
-              center:
-                label: i18n
-              right:
-                label: i18n
-              floatLeft:
-                label: i18n
-              floatRight:
-                label: i18n
-              top:
-                label: i18n
-              bottom:
-                label: i18n
+        inlineEditable: TRUE
+        aloha:
+          placeholder: i18n
+          alignment: []
+          autoparagraph: TRUE
+          format:
+            strong: TRUE
+            em: TRUE
+            sub: TRUE
+            sup: TRUE
+            p: TRUE
+            h3: TRUE
+            h4: TRUE
+            removeFormat: TRUE
+          table:
+            table: TRUE
+          list:
+            ol: TRUE
+            ul: TRUE
+          link:
+            a: TRUE
+          formatlesspaste:
+            button: TRUE
+            formatlessPasteOption: TRUE
 
 'Jonnitto.NodeTypes:LinkMixin':
   abstract: TRUE

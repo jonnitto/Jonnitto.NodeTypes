@@ -1,0 +1,15 @@
+'Jonnitto.NodeTypes:Button':
+  superTypes:
+    'Jonnitto.NodeTypes:Content': TRUE
+    'Jonnitto.NodeTypes:PureTextMixin': TRUE
+    'Jonnitto.NodeTypes:ButtonTagStyleMixin': TRUE
+    'Jonnitto.NodeTypes:ButtonOutlineMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentLeftMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentRightMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentCenterMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentBleedMixin': TRUE
+    'Jonnitto.NodeTypes:LinkMixin': TRUE
+  ui:
+    label: i18n
+    icon: icon-square-o
+    position: 2000

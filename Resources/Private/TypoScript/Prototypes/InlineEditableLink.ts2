@@ -1,0 +1,11 @@
+prototype(NT:InlineEditableLink) < prototype(NT:InlineEditable) {
+	tagName = NT:LinkTagName {
+		defaultTagName = 'div'
+	}
+	attributes = NT:LinkAttributes {
+		class = TS:RawArray {
+			link = NT:LinkClass
+		}
+	}
+	neededProperties = 'text,link'
+}

@@ -1,0 +1,37 @@
+'Jonnitto.NodeTypes:ButtonTagStyleMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+  properties:
+    tagStyle:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle'
+        reloadIfChanged: TRUE
+        inspector:
+          group: settings
+          position: 200
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.placeholder'
+            allowEmpty: TRUE
+            values:
+              primary:
+                label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.primary'
+              secondary:
+                label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.secondary'
+
+'Jonnitto.NodeTypes:ButtonOutlineMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+  properties:
+    outline:
+      type: boolean
+      ui:
+        label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.outline'
+        reloadIfChanged: TRUE
+        inspector:
+          group: settings
+          position: 600

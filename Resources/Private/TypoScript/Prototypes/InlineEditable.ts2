@@ -1,0 +1,42 @@
+prototype(NT:InlineEditable) < prototype(TS:Tag) {
+	@context {
+		property = ${this.property}
+		config = ${this.config}
+		inlineTag = ${this.inlineTag}
+		neededPropertiesArray = ${this.neededPropertiesArray}
+		nodeTypeName = ${String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-'))}
+	}
+
+	property = 'text'
+	inlineTag = 'span'
+	tagName = 'div'
+	neededProperties = ${this.property}
+	neededPropertiesArray = ${String.split(this.neededProperties, ',')}
+	renderElement = TS:Case {
+		isArray {
+			condition = ${Type.isArray(neededPropertiesArray)}
+			renderer = ${q(node).is('[' + Array.join(neededPropertiesArray, '],[') + ']')}
+		}
+		default {
+			condition = true
+			renderer = false
+		}
+	}
+
+	config = ${Configuration.setting('Jonnitto.NodeTypes')}
+
+	attributes.class = TS:RawArray {
+		nodeType = ${nodeTypeName}
+		# Is parent a document => add container class
+		container = ${q(node).parent().parent().is(config.instanceOfDocument) ? config.container : false}
+	}
+
+	content = TS:Tag {
+		content = ${q(node).property(property)}
+		tagName = ${inlineTag}
+		@process.contentElementEditable = ContentElementEditable
+	}
+
+	@process.contentElementWrapping = ContentElementWrapping
+	@if.render = ${this.renderElement || node.context.inBackend}
+}

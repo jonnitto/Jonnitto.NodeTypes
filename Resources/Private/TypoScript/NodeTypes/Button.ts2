@@ -1,0 +1,22 @@
+prototype(NT:Button) < prototype(NT:InlineEditableLink) {
+	attributes.class {
+		btn = ${config.Button.defaultClassName}
+		style = TS:Array {
+			tagStyle = NT:PropertyFromConfigIfNotSet {
+				property = 'tagStyle'
+				configuration = 'Button.defaultStyle'
+				prepend = 'btn'
+			}
+			outline =  NT:BooleanProperty {
+				property = 'outline'
+				prepend = '-'
+			}
+		}
+		alignment = NT:PrependIfPropertyIsSet {
+			property = 'alignment'
+		}
+		link {
+			prepend = 'btn-link'
+		}
+	}
+}

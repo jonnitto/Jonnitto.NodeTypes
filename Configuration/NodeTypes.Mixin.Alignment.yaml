@@ -1,0 +1,122 @@
+'Jonnitto.NodeTypes:AlignmentMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+  properties:
+    alignment:
+      type: string
+      defaultValue: ''
+      ui:
+        label: i18n
+        reloadIfChanged: TRUE
+        inspector:
+          group: settings
+          position: 300
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: i18n
+            allowEmpty: TRUE
+
+'Jonnitto.NodeTypes:AlignmentLeftMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              left:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:left'
+
+'Jonnitto.NodeTypes:AlignmentCenterMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              center:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:center'
+
+'Jonnitto.NodeTypes:AlignmentRightMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              right:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:right'
+
+'Jonnitto.NodeTypes:AlignmentFloatLeftMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              floatLeft:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatLeft'
+
+'Jonnitto.NodeTypes:AlignmentFloatRightMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              floatRight:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatRight'
+
+'Jonnitto.NodeTypes:AlignmentTopMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              top:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:top'
+
+'Jonnitto.NodeTypes:AlignmentBottomMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              bottom:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:bottom'
+
+'Jonnitto.NodeTypes:AlignmentBleedMixin':
+  abstract: TRUE
+  superTypes:
+    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+  properties:
+    alignment:
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              bleed:
+                label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:bleed'

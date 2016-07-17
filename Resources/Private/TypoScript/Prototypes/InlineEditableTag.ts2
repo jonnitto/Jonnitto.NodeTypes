@@ -1,28 +1,4 @@
-prototype(NT:InlineEditableTag) < prototype(TS:Tag) {
-	@context {
-		property = ${this.property}
-		config = ${this.config}
-		inlineTag = ${this.inlineTag}
-	}
-
-	property = 'text'
+prototype(NT:InlineEditableTag) < prototype(NT:InlineEditable) {
 	inlineTag = NT:LinkTagName
-	tagName = 'div'
-
-	config = ${Configuration.setting('Jonnitto.NodeTypes')}
-
-	attributes.class = TS:RawArray {
-		nodeType = ${String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-'))}
-		# Is parent a document => add container class
-		container = ${q(node).parent().parent().is(config.instanceOfDocument) ? config.container : false}
-	}
-
-	content = TS:Tag {
-		content = ${q(node).property(property)}
-		tagName = ${inlineTag}
-		attributes = NT:LinkAttributes
-		@process.contentElementEditable = ContentElementEditable
-	}
-
-	@process.contentElementWrapping = ContentElementWrapping
+	content.attributes = NT:LinkAttributes
 }

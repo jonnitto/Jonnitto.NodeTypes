@@ -20,6 +20,34 @@ prototype(NT:LinkURI) < prototype(TS:Value) {
 	}
 }
 
+prototype(NT:LinkClass) < prototype(TS:Value) {
+	@context {
+		prepend = ${this.prepend}
+		read = ${q(node).property(this.property)}
+		scheme = ${Neos.Link.getScheme(q(node).property(this.property))}
+		divider = ${this.divider}
+	}
+
+	property = ${property ? property : 'link'}
+	prepend = ${this.property}
+	divider = '-'
+
+	value = TS:Case {
+		hasScheme {
+			condition = ${scheme}
+			renderer = ${prepend + divider + scheme}
+		}
+		isExternal {
+			condition = ${read}
+			renderer = ${prepend + divider + 'external'}
+		}
+		noLink {
+			condition = true
+			renderer = false
+		}
+	}
+}
+
 prototype(NT:LinkTagName) < prototype(TS:Value) {
 	property = 'link'
 	linkTagName = 'a'
@@ -41,4 +69,5 @@ prototype(NT:LinkAttributes) < prototype(TS:Attributes) {
 	@context.property = 'link'
 	target = NT:LinkTarget
 	href = NT:LinkURI
+	class = NT:LinkClass
 }

@@ -4,19 +4,12 @@
     'Jonnitto.NodeTypes:PureTitleMixin': TRUE
     'Jonnitto.NodeTypes:HeadlineTagNameMixin': TRUE
     'Jonnitto.NodeTypes:HeadlineTagStyleMixin': TRUE
-    'Jonnitto.NodeTypes:AlignmentMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentLeftMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentRightMixin': TRUE
+    'Jonnitto.NodeTypes:AlignmentCenterMixin': TRUE
     'Jonnitto.NodeTypes:LinkMixin': TRUE
+  label: ${q(node).property('title') + (q(node).property('tagName') || q(node).property('tagStyle') ? ' <sup>' + q(node).property('tagName') + (q(node).property('tagStyle') ? '.' + q(node).property('tagStyle') : '') + '</sup>' : '')}
   ui:
     label: i18n
     icon: icon-header
     position: 100
-  properties:
-    alignment:
-      ui:
-        inspector:
-          editorOptions:
-            values:
-              top: ~
-              bottom: ~
-              floatLeft: ~
-              floatRight: ~
