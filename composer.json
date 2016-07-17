@@ -1,0 +1,31 @@
+{
+    "name": "jonnitto/nodetypes",
+    "type": "typo3-flow-plugin",
+    "version": "0.0.1",
+    "license": "MIT",
+    "description": "Some NodeTypes for the greatest Content System on earth: Neos.io",
+    "keywords": ["flow", "neos", "content", "nodetypes"],
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://twitter.com/jonnitto",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/neos": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Jonnitto\\NodeTypes": "Classes"
+        }
+    },
+    "extra": {
+        "marketplace-account": "me@jonnitto.ch",
+        "installer-name": "Jonnitto.NodeTypes",
+        "neos": {
+            "package-key": "Jonnitto.NodeTypes"
+        }
+    }
+}

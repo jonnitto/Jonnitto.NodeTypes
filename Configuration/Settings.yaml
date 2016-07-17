@@ -1,0 +1,16 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'Jonnitto.NodeTypes': TRUE
+    userInterface:
+      translation:
+        autoInclude:
+          'Jonnitto.NodeTypes': ['NodeTypes/*']
+
+Jonnitto:
+  NodeTypes:
+    Headline:
+      defaultTagName: h2
+    container: container
+    instanceOfDocument: '[instanceof TYPO3.Neos:Document]'

@@ -1,0 +1,5 @@
+prototype(NT:Headline) < prototype(NT:InlineEditableTag) {
+	property = 'title'
+	tagName = ${q(node).property('tagName') ? q(node).property('tagName') : this.nodeTypeConfiguration.Headline.defaultTagName}
+	attributes.class.style = ${q(node).property('tagStyle') ? q(node).property('tagStyle') : false}
+}

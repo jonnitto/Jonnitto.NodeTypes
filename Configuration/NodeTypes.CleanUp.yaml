@@ -1,0 +1,2 @@
+# Turn the default headline off.
+'TYPO3.Neos.NodeTypes:Headline': ~
