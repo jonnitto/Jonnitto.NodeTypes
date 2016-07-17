@@ -1,0 +1,8 @@
+prototype(NT:PropertyFromConfigIfNotSet) < prototype(TS:Value) {
+	property = NULL
+	configuration = NULL
+
+	read = ${q(node).property(this.property)}
+	default = ${Configuration.setting('Jonnitto.NodeTypes.' + this.configuration)}
+	value = ${this.read ? this.read : this.default}
+}

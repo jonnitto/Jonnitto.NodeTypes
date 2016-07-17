@@ -1,0 +1,7 @@
+prototype(NT:PrependIfPropertyIsSet) < prototype(TS:Value) {
+	property = NULL
+	prepend = ${this.property + '-'}
+
+	read = ${q(node).property(this.property)}
+	value = ${this.read ? (this.prepend + this.read) : false}
+}

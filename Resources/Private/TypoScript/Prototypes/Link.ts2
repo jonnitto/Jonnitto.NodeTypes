@@ -1,0 +1,44 @@
+prototype(NT:LinkURI) < prototype(TS:Value) {
+	property = ${property ? property : 'link'}
+	@context.read = ${q(node).property(this.property)}
+	value = TS:Case {
+		isNode {
+			condition = ${Neos.Link.getScheme(read) == 'node'}
+			renderer = NodeUri {
+				node = ${Neos.Link.convertUriToObject(read, node)}
+			}
+		}
+		isAssetOrExternal {
+			condition = ${read}
+			renderer = ${read}
+			renderer.@process.convertUris = TYPO3.Neos:ConvertUris
+		}
+		noLink {
+			condition = true
+			renderer = false
+		}
+	}
+}
+
+prototype(NT:LinkTagName) < prototype(TS:Value) {
+	property = 'link'
+	linkTagName = 'a'
+	defaultTagName = 'span'
+
+	read = ${q(node).property(this.property)}
+	value = ${this.read && node.context.live ? this.linkTagName : this.defaultTagName}
+}
+
+prototype(NT:LinkTarget) < prototype(TS:Value) {
+	property = ${property ? property : 'link'}
+	target = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
+
+	read = ${q(node).property(this.property)}
+	value = ${this.read ? Neos.Link.getScheme(this.read) == 'node' ? false : this.target : false}
+}
+
+prototype(NT:LinkAttributes) < prototype(TS:Attributes) {
+	@context.property = 'link'
+	target = NT:LinkTarget
+	href = NT:LinkURI
+}

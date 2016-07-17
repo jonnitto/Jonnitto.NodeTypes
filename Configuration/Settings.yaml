@@ -14,3 +14,4 @@ Jonnitto:
       defaultTagName: h2
     container: container
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
+    externalTarget: '_blank'
