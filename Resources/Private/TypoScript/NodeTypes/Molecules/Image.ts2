@@ -4,21 +4,41 @@ prototype(NT:Image) < prototype(NT:Content) {
 	property = 'image'
 	inlineTag = NT:LinkTagName
 
+	containerFluid = ${q(node).property('alignment') == 'bleed'}
+
+	attributes.class {
+		alignment = NT:WrapIfPropertyIsSet {
+			property = 'alignment'
+			prepend = 'image-'
+		}
+	}
+
 	content = TS:Array {
 		image = TS:Case {
 			hasLink {
 				condition = ${q(node).property('link')}
 				renderer = TS:Tag {
 					tagName = ${inlineTag}
-					attributes = NT:LinkAttributes
+					attributes = NT:LinkAttributes {
+						style =  NT:ImageMaxWidthValue
+					}
 					content = NT:Plainimage
 				}
 			}
 			hasLightbox {
 				condition = ${q(node).property('lightbox')}
 				renderer = TS:Tag {
-					tagName = ${node.context.inBackend ? 'span' : 'a'}
-					attributes = NT:LightboxAttributes
+					tagName = ${node.context.inBackend ? 'div' : 'a'}
+					attributes = NT:LightboxAttributes {
+						style =  NT:ImageMaxWidthValue
+					}
+					content = NT:Plainimage
+				}
+			}
+			hasMaxWidth {
+				condition = ${q(node).property('maximumWidth')}
+				renderer = TS:Tag {
+					attributes.style =  NT:ImageMaxWidthValue
 					content = NT:Plainimage
 				}
 			}

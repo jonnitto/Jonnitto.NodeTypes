@@ -1,0 +1,32 @@
+.jonnitto-nodetypes-image {
+	figure {
+		&,
+		> div,
+		> a {
+			width: 100%;
+			display: block;
+		}
+	}
+
+	.img-plain {
+		max-width: 100%;
+		height: auto;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+
+		flex: 0 0 auto;
+		align-self: center;
+		object-fit: scale-down;
+
+		&[src$=".svg"] {
+			object-fit: fill;
+			width: 100%;
+		}
+
+		&.img-bleed {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+}

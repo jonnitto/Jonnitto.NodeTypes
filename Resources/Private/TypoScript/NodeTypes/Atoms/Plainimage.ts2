@@ -24,14 +24,6 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 	allowUpScaling = false
 
 	attributes = TS:Attributes {
-		style = TS:Array {
-			maximumWidth = NT:WrapIfPropertyIsSet {
-				property = 'maximumWidth'
-				prepend = 'max-width:'
-				append = 'px;'
-			}
-		}
-		//data = ${String.toString(asset)}
 		class = TS:RawArray {
 			type = ${dummyImage? 'neos-handle' : 'img-plain'}
 			ratio = TS:Case {
@@ -48,6 +40,10 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 					condition = ${asset.width < asset.height}
 					renderer = 'img-portrait'
 				}
+			}
+			alignment = NT:WrapIfPropertyIsSet {
+				property = 'alignment'
+				prepend = 'img-'
 			}
 		}
 		title = ${titleText}

@@ -1,0 +1,10 @@
+prototype(NT:ImageMaxWidthValue) < prototype(TS:Value) {
+	@context.property = ${this.property}
+	property = 'maximumWidth'
+
+	value = NT:WrapIfPropertyIsSet {
+		property = ${property}
+		prepend = 'max-width:'
+		append = 'px;'
+	}
+}
