@@ -1,0 +1,36 @@
+prototype(NT:Image) < prototype(NT:Content) {
+	isContentElement = true
+	tagName = 'figure'
+	property = 'image'
+	inlineTag = NT:LinkTagName
+
+	content = TS:Array {
+		image = TS:Case {
+			hasLink {
+				condition = ${q(node).property('link')}
+				renderer = TS:Tag {
+					tagName = ${inlineTag}
+					attributes = NT:LinkAttributes
+					content = NT:Plainimage
+				}
+			}
+			hasLightbox {
+				condition = ${q(node).property('lightbox')}
+				renderer = TS:Tag {
+					tagName = ${node.context.inBackend ? 'span' : 'a'}
+					attributes = NT:LightboxAttributes
+					content = NT:Plainimage
+				}
+			}
+			default {
+				condition = true
+				renderer = NT:Plainimage
+			}
+		}
+		caption = NT:InlineEditable {
+			property = 'caption'
+			tagName = 'figcaption'
+			@if.render = ${q(node).property('hasCaption') && (q(node).property('caption') || node.context.inBackend) ? true : false}
+		}
+	}
+}

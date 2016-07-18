@@ -1,2 +1,4 @@
 'TYPO3.Neos.NodeTypes:Headline': ~
 'TYPO3.Neos.NodeTypes:Text': ~
+'TYPO3.Neos.NodeTypes:Image': ~
+'TYPO3.Neos.NodeTypes:TextWithImage': ~

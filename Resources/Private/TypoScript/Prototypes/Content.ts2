@@ -1,4 +1,4 @@
-prototype(NT:InlineEditable) < prototype(TS:Tag) {
+prototype(NT:Content) < prototype(TS:Tag) {
 	@context {
 		property = ${this.property}
 		config = ${this.config}
@@ -7,8 +7,7 @@ prototype(NT:InlineEditable) < prototype(TS:Tag) {
 		isContentElement = ${this.isContentElement}
 	}
 
-	property = 'text'
-	inlineTag = 'span'
+	property = NULL
 	tagName = 'div'
 	isContentElement = false
 
@@ -20,11 +19,7 @@ prototype(NT:InlineEditable) < prototype(TS:Tag) {
 		container = ${q(node).parent().parent().is(config.instanceOfDocument) && isContentElement ? config.container : false}
 	}
 
-	content = TS:Tag {
-		tagName = ${inlineTag}
-		content = ${q(node).property(property)}
-		@process.contentElementEditable = ContentElementEditable
-	}
+	content = ''
 
 	@process.contentElementWrapping = ContentElementWrapping
 	@if.render = NT:NeededProperties

@@ -8,17 +8,27 @@ Jonnitto.NodeTypes
 Some NodeTypes for the greatest Content System on earth: [Neos](https://www.neos.io). The Elements only get rendered of there is any content.  
 Work in progress.
 
+
 Replacement for Neos.NodeTypes
 ------------------------------
-
 * Headline
 	* Without Aloha, you can choose markup, style, alignment a link in the inspector. The headline tag is the outer element. In that way, all the css stylings get easier.
 * Text
+* Image
+* Text with Image
 
-New NodeTypes
--------------
 
+Atoms
+-----
 * Button
+* Headline
+* Text
+* Image
+
+
+Molecules
+---------
+* Text with Image
 
 
 License

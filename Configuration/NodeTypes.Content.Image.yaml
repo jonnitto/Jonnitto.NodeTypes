@@ -1,0 +1,15 @@
+'Jonnitto.NodeTypes:Image':
+  superTypes:
+    'Jonnitto.NodeTypes:Content': TRUE
+    'Jonnitto.NodeTypes:AlignmentBleedMixin': TRUE
+    'Jonnitto.NodeTypes:LinkMixin': TRUE
+    'Jonnitto.NodeTypes:ImageMixin': TRUE
+    'Jonnitto.NodeTypes:ImageAlternativeTextMixin': TRUE
+    'Jonnitto.NodeTypes:ImageTitleMixin': TRUE
+    'Jonnitto.NodeTypes:ImageCaptionMixin': TRUE
+    'Jonnitto.NodeTypes:ImageLightboxMixin': TRUE
+    'Jonnitto.NodeTypes:MaximumWidthMixin': TRUE
+  ui:
+    label: i18n
+    icon: icon-picture
+    position: 300

@@ -1,0 +1,3 @@
+prototype(NT:NodeTypeName) < prototype(TS:Value) {
+	value = ${String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-'))}
+}

@@ -15,6 +15,14 @@ Jonnitto:
     Button:
       defaultClassName: btn
       defaultStyle: secondary
+    Image:
+      maximumWidth: 2560
+      maximumHeight: 1440
+      openOriginalImageInLightbox: FALSE
+      renderRetina: TRUE
+      lightbox:
+        class: 'lightbox'
+        target: '_blank'
     container: container
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
     externalTarget: '_blank'

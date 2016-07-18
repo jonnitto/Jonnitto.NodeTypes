@@ -1,4 +1,6 @@
 prototype(NT:InlineEditableTag) < prototype(NT:InlineEditable) {
-	inlineTag = NT:LinkTagName
+	inlineTag = NT:LinkTagName {
+		defaultTagName = 'span'
+	}
 	content.attributes = NT:LinkAttributes
 }

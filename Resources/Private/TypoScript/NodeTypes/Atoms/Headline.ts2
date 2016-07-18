@@ -1,5 +1,7 @@
 prototype(NT:Headline) < prototype(NT:InlineEditableTag) {
 	property = 'title'
+	isContentElement = true
+
 	tagName = NT:PropertyFromConfigIfNotSet {
 		property = 'tagName'
 		configuration = 'Headline.defaultTagName'
@@ -7,7 +9,7 @@ prototype(NT:Headline) < prototype(NT:InlineEditableTag) {
 	attributes {
 		class {
 			style = ${q(node).property('tagStyle')}
-			alignment = NT:PrependIfPropertyIsSet {
+			alignment = NT:WrapIfPropertyIsSet {
 				property = 'alignment'
 			}
 		}

@@ -1,0 +1,102 @@
+prototype(NT:Plainimage) < prototype(TS:Tag) {
+	@context {
+		asset = ${this.asset}
+		titleText = ${q(node).property(this.title)}
+		altText = ${q(node).property(this.alternativeText)}
+		maximumWidth = ${this.maximumWidth}
+		maximumHeight = ${this.maximumHeight}
+		allowCropping = ${this.allowCropping}
+		allowUpScaling = ${this.allowUpScaling}
+		dummyImage = ${node.context.inBackend && !this.asset}
+	}
+	tagName = 'img'
+	property = ${property ? property : 'image'}
+	title = ${title ? title : 'title'}
+	alternativeText = ${alternativeText ? alternativeText : 'alternativeText'}
+	asset = ${q(node).property(this.property)}
+	maximumWidth = NT:PropertyFromConfigIfNotSet {
+		property = 'maximumWidth'
+		configuration = 'Image.maximumWidth'
+	}
+	maximumHeight = ${config.Image.maximumHeight}
+
+	allowCropping = false
+	allowUpScaling = false
+
+	attributes = TS:Attributes {
+		style = TS:Array {
+			maximumWidth = NT:WrapIfPropertyIsSet {
+				property = 'maximumWidth'
+				prepend = 'max-width:'
+				append = 'px;'
+			}
+		}
+		//data = ${String.toString(asset)}
+		class = TS:RawArray {
+			type = ${dummyImage? 'neos-handle' : 'img-plain'}
+			ratio = TS:Case {
+				@context {
+					width = ${asset.width > 199 ? Math.round(asset.width / 10) : asset.width}
+					height = ${asset.width > 199 ? Math.round(asset.height / 10) : asset.height}
+				}
+				isSquare {
+					condition = ${width == height}
+					renderer = 'img-square'
+				}
+				isLandscape {
+					condition = ${width > height}
+					renderer = 'img-landscape'
+				}
+				isPortrait {
+					condition = ${width < height}
+					renderer = 'img-portrait'
+				}
+			}
+		}
+		title = ${titleText}
+		alt = ${altText}
+		src = TS:Case {
+			hasImage {
+				condition = ${asset}
+				renderer = ImageUri {
+					asset = ${asset}
+					maximumWidth = ${maximumWidth * 0.5}
+					maximumHeight = ${maximumHeight * 0.5}
+					allowCropping = ${allowCropping}
+					allowUpScaling = ${allowUpScaling}
+				}
+			}
+			inEditMode {
+				condition = true
+				renderer = TS:ResourceUri {
+					package = 'TYPO3.Neos'
+					path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+				}
+			}
+		}
+		srcset = TS:Array {
+			1 = ImageUri {
+				asset = ${asset}
+				maximumWidth = ${maximumWidth}
+				maximumHeight = ${maximumHeight}
+				allowCropping = ${allowCropping}
+				allowUpScaling = ${allowUpScaling}
+				@process.addResolution = ${value + ' 1x'}
+			}
+			2 = ImageUri {
+				asset = ${asset}
+				maximumWidth = ${maximumWidth * 2}
+				maximumHeight = ${maximumHeight * 2}
+				allowCropping = ${allowCropping}
+				allowUpScaling = ${allowUpScaling}
+				@process.addResolution = ${',' + value + ' 2x'}
+				@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
+			}
+			@if.hasAsset = ${asset}
+		}
+	}
+
+	@if.render = NT:NeededProperties {
+		check = ${asset}
+	}
+}

@@ -1,0 +1,13 @@
+prototype(NT:LightboxAttributes) < prototype(TS:Attributes) {
+	@context.asset = ${asset ? asset : property ? q(node).property(property) : q(node).property('image')}
+	target = ${config.Image.lightbox.target}
+	class = ${config.Image.lightbox.class}
+	data-size = TS:Array {
+		width = ${asset.width}
+		divider = 'x'
+		height = ${asset.height}
+	}
+	href = ImageUri {
+		asset = ${asset}
+	}
+}
