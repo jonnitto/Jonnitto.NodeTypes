@@ -19,8 +19,10 @@
             values:
               primary:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.primary'
+                icon: icon-bullhorn
               secondary:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.secondary'
+                icon: icon-link
 
 'Jonnitto.NodeTypes:ButtonOutlineMixin':
   abstract: TRUE

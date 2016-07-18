@@ -1,0 +1,21 @@
+prototype(NT:Notification) < prototype(NT:InlineEditableTag) {
+	isContentElement = true
+	attributes.style = TS:Array {
+		default = ${config.Notification.style}
+		type = ${config.Notification[q(node).property('type')]}
+	}
+	@if.render = TS:Case {
+		inBackend {
+			condition = ${node.context.inBackend}
+			renderer = true
+		}
+		showAlsoInFrontend {
+			condition = ${!q(node).property('showOnlyInBackend') && q(node).property('text') ? true : false}
+			renderer = true
+		}
+		default {
+			condition = true
+			renderer = false
+		}
+	}
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" product-name="Jonnitto.NodeTypes" source-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="ui.label" xml:space="preserve">
+				<source>Notification</source>
+			</trans-unit>
+			<trans-unit id="properties.showOnlyInBackend" xml:space="preserve">
+				<source>Show the notification only in the backend</source>
+			</trans-unit>
+			<trans-unit id="properties.type" xml:space="preserve">
+				<source>Type of notification</source>
+			</trans-unit>
+			<trans-unit id="properties.type.selectBoxEditor.values.info" xml:space="preserve">
+				<source>Information</source>
+			</trans-unit>
+			<trans-unit id="properties.type.selectBoxEditor.values.warning" xml:space="preserve">
+				<source>Warning</source>
+			</trans-unit>
+			<trans-unit id="properties.type.selectBoxEditor.values.alert" xml:space="preserve">
+				<source>Alert</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

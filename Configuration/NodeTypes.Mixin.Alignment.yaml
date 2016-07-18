@@ -29,6 +29,7 @@
             values:
               left:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:left'
+                icon: icon-align-left
 
 'Jonnitto.NodeTypes:AlignmentCenterMixin':
   abstract: TRUE
@@ -42,6 +43,7 @@
             values:
               center:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:center'
+                icon: icon-align-center
 
 'Jonnitto.NodeTypes:AlignmentRightMixin':
   abstract: TRUE
@@ -55,6 +57,7 @@
             values:
               right:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:right'
+                icon: icon-align-right
 
 'Jonnitto.NodeTypes:AlignmentFloatLeftMixin':
   abstract: TRUE
@@ -68,6 +71,7 @@
             values:
               floatLeft:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatLeft'
+                icon: icon-align-left
 
 'Jonnitto.NodeTypes:AlignmentFloatRightMixin':
   abstract: TRUE
@@ -81,6 +85,7 @@
             values:
               floatRight:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatRight'
+                icon: icon-align-right
 
 'Jonnitto.NodeTypes:AlignmentTopMixin':
   abstract: TRUE
@@ -94,6 +99,7 @@
             values:
               top:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:top'
+                icon: icon-arrow-up
 
 'Jonnitto.NodeTypes:AlignmentBottomMixin':
   abstract: TRUE
@@ -107,6 +113,7 @@
             values:
               bottom:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:bottom'
+                icon: icon-arrow-down
 
 'Jonnitto.NodeTypes:AlignmentBleedMixin':
   abstract: TRUE
@@ -120,3 +127,4 @@
             values:
               bleed:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:bleed'
+                icon: icon-align-justify

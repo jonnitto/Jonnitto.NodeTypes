@@ -1,0 +1,17 @@
+privilegeTargets:
+  'TYPO3\TYPO3CR\Security\Authorization\Privilege\Node\CreateNodePrivilege':
+    'Jonnitto.NodeTypes:BackendNotificationCreate':
+      matcher: nodeIsOfType("Jonnitto.NodeTypes:BackendNotification")
+  'TYPO3\TYPO3CR\Security\Authorization\Privilege\Node\EditNodePrivilege':
+    'Jonnitto.NodeTypes:BackendNotificationEdit':
+      matcher: nodeIsOfType("Jonnitto.NodeTypes:BackendNotification")
+
+roles:
+  'TYPO3.Neos:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'Jonnitto.NodeTypes:BackendNotificationCreate'
+        permission: GRANT
+      -
+        privilegeTarget: 'Jonnitto.NodeTypes:BackendNotificationEdit'
+        permission: GRANT

@@ -13,9 +13,8 @@ Replacement for Neos.NodeTypes
 ------------------------------
 * Headline
 	* Without Aloha, you can choose markup, style, alignment a link in the inspector. The headline tag is the outer element. In that way, all the css stylings get easier.
-* Text
 * Image
-* Text with Image
+* Text
 
 
 Atoms
@@ -23,12 +22,12 @@ Atoms
 * Button
 * Headline
 * Text
-* Image
 
 
 Molecules
 ---------
-* Text with Image
+* Notification
+* Image
 
 
 License
