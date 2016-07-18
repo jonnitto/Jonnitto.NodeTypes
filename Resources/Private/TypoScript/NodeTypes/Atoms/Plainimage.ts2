@@ -35,20 +35,17 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 		class = TS:RawArray {
 			type = ${dummyImage? 'neos-handle' : 'img-plain'}
 			ratio = TS:Case {
-				@context {
-					width = ${asset.width > 199 ? Math.round(asset.width / 10) : asset.width}
-					height = ${asset.width > 199 ? Math.round(asset.height / 10) : asset.height}
-				}
+				@context.roundValue = ${asset.width > 199 ? 10 : asset.width > 99 ? 5 : asset.width > 49 ? 2 : 1}
 				isSquare {
-					condition = ${width == height}
+					condition = ${Math.round(asset.width / roundValue) == Math.round(asset.height / roundValue)}
 					renderer = 'img-square'
 				}
 				isLandscape {
-					condition = ${width > height}
+					condition = ${asset.width > asset.height}
 					renderer = 'img-landscape'
 				}
 				isPortrait {
-					condition = ${width < height}
+					condition = ${asset.width < asset.height}
 					renderer = 'img-portrait'
 				}
 			}
