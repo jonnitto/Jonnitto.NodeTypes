@@ -6,6 +6,7 @@ prototype(NT:Content) < prototype(TS:Tag) {
 		nodeTypeName = NT:NodeTypeName
 		isContentElement = ${this.isContentElement}
 		containerFluid = ${this.containerFluid}
+		isOnDocument = ${this.isOnDocument}
 	}
 
 	property = NULL
@@ -13,6 +14,7 @@ prototype(NT:Content) < prototype(TS:Tag) {
 	isContentElement = false
 	containerFluid = false
 
+	isOnDocument = ${q(node).parent().parent().is(this.config.instanceOfDocument)}
 	config = ${Configuration.setting('Jonnitto.NodeTypes')}
 
 	attributes.class = TS:RawArray {
@@ -20,7 +22,7 @@ prototype(NT:Content) < prototype(TS:Tag) {
 		# Is parent a document => add container class
 		container = TS:Value {
 			value = ${containerFluid ? config.containerFluid : config.container}
-			@if.isOnDocumentAndContentElement = ${q(node).parent().parent().is(config.instanceOfDocument) && isContentElement}
+			@if.isOnDocumentAndContentElement = ${isOnDocument && isContentElement}
 		}
 	}
 

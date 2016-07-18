@@ -1,6 +1,5 @@
 prototype(NT:Text) < prototype(NT:InlineEditableTag) {
 	inlineTag = 'div'
 	isContentElement = true
-
 	@process.converturis = ConvertUris
 }
