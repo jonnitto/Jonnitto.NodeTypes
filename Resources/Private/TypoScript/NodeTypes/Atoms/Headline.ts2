@@ -1,11 +1,13 @@
 prototype(NT:Headline) < prototype(NT:InlineEditableTag) {
+	@context.defaultTagName = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof TYPO3.Neos:Content]').get(0) == node ? 'firstTagName' : 'defaultTagName'}
 	property = 'title'
 	isContentElement = true
 
 	tagName = NT:PropertyFromConfigIfNotSet {
 		property = 'tagName'
-		configuration = 'Headline.defaultTagName'
+		configuration = ${'Headline.' + defaultTagName}
 	}
+
 	attributes {
 		class {
 			style = ${q(node).property('tagStyle')}
