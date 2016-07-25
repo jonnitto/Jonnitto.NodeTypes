@@ -1,0 +1,26 @@
+$textwithimage-float-breakpoint: sm !default;
+$textwithimage-float-maxWidth: 50% !default;
+$textwithimage-float-margin-x: 1rem !default;
+$textwithimage-float-margin-top: 0.5em !default;
+
+@include media-breakpoint-up($textwithimage-float-breakpoint) {
+	.pos-float-left,
+	.pos-float-right {
+		clear: fix;
+
+		.image {
+			max-width: $textwithimage-float-maxWidth;
+			margin-top: $textwithimage-float-margin-top;
+		}
+	}
+
+	.float-image-right {
+		float: right;
+		margin-left: $textwithimage-float-margin-x;
+	}
+
+	.float-image-left {
+		float: left;
+		margin-right: $textwithimage-float-margin-x;
+	}
+}

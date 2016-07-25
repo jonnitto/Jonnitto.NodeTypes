@@ -69,8 +69,16 @@ prototype(NT:LinkTarget) < prototype(TS:Value) {
 	value = ${this.read ? Neos.Link.getScheme(this.read) == 'node' || String.startsWith(this.read, 'mailto:') ? false : this.target : false}
 }
 
+prototype(NT:LinRel) < prototype(TS:Value) {
+	property = ${property ? property : 'link'}
+
+	read = ${q(node).property(this.property)}
+	value = ${this.read ? Neos.Link.getScheme(this.read) == 'node' ? false : 'noopener' : false}
+}
+
 prototype(NT:LinkAttributes) < prototype(TS:Attributes) {
 	@context.property = 'link'
+	rel = NT:LinRel
 	target = NT:LinkTarget
 	href = NT:LinkURI
 	class = NT:LinkClass

@@ -19,7 +19,7 @@
 		align-self: center;
 		object-fit: scale-down;
 
-		&[src$=".svg"] {
+		&[src$='.svg'] {
 			object-fit: fill;
 			width: 100%;
 		}
