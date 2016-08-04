@@ -53,8 +53,8 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 				condition = ${asset}
 				renderer = ImageUri {
 					asset = ${asset}
-					maximumWidth = ${maximumWidth * 0.5}
-					maximumHeight = ${maximumHeight * 0.5}
+					maximumWidth = ${maximumWidth}
+					maximumHeight = ${maximumHeight}
 					allowCropping = ${allowCropping}
 					allowUpScaling = ${allowUpScaling}
 				}
@@ -84,6 +84,15 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 				allowUpScaling = ${allowUpScaling}
 				@process.addResolution = ${',' + value + ' 2x'}
 				@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
+			}
+			3 = ImageUri {
+				asset = ${asset}
+				maximumWidth = ${maximumWidth * 3}
+				maximumHeight = ${maximumHeight * 3}
+				allowCropping = ${allowCropping}
+				allowUpScaling = ${allowUpScaling}
+				@process.addResolution = ${',' + value + ' 3x'}
+				@if.hasEnoughPixel = ${asset.width >= maximumWidth * 3 && asset.height >= maximumHeight * 3}
 			}
 			@if.hasAsset = ${asset}
 		}
