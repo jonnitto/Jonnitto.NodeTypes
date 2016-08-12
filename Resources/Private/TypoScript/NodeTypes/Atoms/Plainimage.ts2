@@ -1,8 +1,8 @@
 prototype(NT:Plainimage) < prototype(TS:Tag) {
 	@context {
 		asset = ${this.asset}
-		titleText = ${q(node).property(this.title)}
-		altText = ${q(node).property(this.alternativeText)}
+		titleText = ${this.title ? q(node).property(this.title) : false}
+		altText = ${this.alternativeText ? q(node).property(this.alternativeText) : false}
 		maximumWidth = ${this.maximumWidth}
 		maximumHeight = ${this.maximumHeight}
 		allowCropping = ${this.allowCropping}
