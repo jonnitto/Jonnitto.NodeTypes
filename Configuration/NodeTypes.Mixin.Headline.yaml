@@ -1,21 +1,21 @@
 'Jonnitto.NodeTypes:HeadlineTagNameMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     tagName:
       type: string
       defaultValue: ''
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.tagName'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: settings
           position: 100
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.tagName.placeholder'
-            allowEmpty: TRUE
+            allowEmpty: true
             values:
               h1:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h1'
@@ -27,23 +27,23 @@
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h4'
 
 'Jonnitto.NodeTypes:HeadlineTagStyleMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     tagStyle:
       type: string
       defaultValue: ''
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.tagStyle'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: settings
           position: 200
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.tagStyle.placeholder'
-            allowEmpty: TRUE
+            allowEmpty: true
             values:
               h1:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h1'

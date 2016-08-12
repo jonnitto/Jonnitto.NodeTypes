@@ -1,21 +1,21 @@
 'Jonnitto.NodeTypes:ButtonTagStyleMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     tagStyle:
       type: string
       defaultValue: ''
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: settings
           position: 200
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.placeholder'
-            allowEmpty: TRUE
+            allowEmpty: true
             values:
               primary:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.primary'
@@ -25,15 +25,15 @@
                 icon: icon-link
 
 'Jonnitto.NodeTypes:ButtonOutlineMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': TRUE
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     outline:
       type: boolean
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.outline'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: settings
           position: 600

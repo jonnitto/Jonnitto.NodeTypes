@@ -1,7 +1,7 @@
 'Jonnitto.NodeTypes:Homepage':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:Page': TRUE
+    'Jonnitto.NodeTypes:Page': true
   ui:
     icon: icon-globe
     label: Homepage
@@ -21,4 +21,4 @@
 'TYPO3.Neos:Document':
   constraints:
     nodeTypes:
-      'Jonnitto.NodeTypes:Homepage': FALSE
+      'Jonnitto.NodeTypes:Homepage': false

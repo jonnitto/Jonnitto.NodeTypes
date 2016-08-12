@@ -1,14 +1,14 @@
 'Jonnitto.NodeTypes:Button':
   superTypes:
-    'Jonnitto.NodeTypes:Content': TRUE
-    'Jonnitto.NodeTypes:PureTextMixin': TRUE
-    'Jonnitto.NodeTypes:ButtonTagStyleMixin': TRUE
-    'Jonnitto.NodeTypes:ButtonOutlineMixin': TRUE
-    'Jonnitto.NodeTypes:AlignmentLeftMixin': TRUE
-    'Jonnitto.NodeTypes:AlignmentRightMixin': TRUE
-    'Jonnitto.NodeTypes:AlignmentCenterMixin': TRUE
-    'Jonnitto.NodeTypes:AlignmentBleedMixin': TRUE
-    'Jonnitto.NodeTypes:LinkMixin': TRUE
+    'Jonnitto.NodeTypes:Content': true
+    'Jonnitto.NodeTypes:PureTextMixin': true
+    'Jonnitto.NodeTypes:ButtonTagStyleMixin': true
+    'Jonnitto.NodeTypes:ButtonOutlineMixin': true
+    'Jonnitto.NodeTypes:AlignmentLeftMixin': true
+    'Jonnitto.NodeTypes:AlignmentRightMixin': true
+    'Jonnitto.NodeTypes:AlignmentCenterMixin': true
+    'Jonnitto.NodeTypes:AlignmentBleedMixin': true
+    'Jonnitto.NodeTypes:LinkMixin': true
   ui:
     label: i18n
     icon: icon-square-o

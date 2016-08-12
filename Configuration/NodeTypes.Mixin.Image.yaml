@@ -1,5 +1,5 @@
 'Jonnitto.NodeTypes:ImageSettingsMixin':
-  abstract: TRUE
+  abstract: true
   ui:
     inspector:
       groups:
@@ -9,55 +9,55 @@
           position: 10
 
 'Jonnitto.NodeTypes:ImageMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': TRUE
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     image:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.image'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: image
           position: 100
 
 'Jonnitto.NodeTypes:ImageAlternativeTextMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': TRUE
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     alternativeText:
       type: string
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.alternativeText'
-        reloadIfChanged: FALSE
+        reloadIfChanged: false
         inspector:
           group: image
           position: 300
 
 'Jonnitto.NodeTypes:ImageTitleMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': TRUE
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     title:
       type: string
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.title'
-        reloadIfChanged: FALSE
+        reloadIfChanged: false
         inspector:
           group: image
           position: 400
 
 'Jonnitto.NodeTypes:ImageLightboxMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': TRUE
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     lightbox:
       type: boolean
-      defaultValue: FALSE
+      defaultValue: false
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.lightbox'
         inspector:
@@ -65,15 +65,15 @@
           position: 800
 
 'Jonnitto.NodeTypes:ImageCaptionMixin':
-  abstract: TRUE
+  abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': TRUE
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     hasCaption:
       type: boolean
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.hasCaption'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: image
           position: 500
@@ -81,37 +81,37 @@
       defaultValue: ''
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           placeholder: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.caption.placeholder'
           format:
-            sub: TRUE
-            sup: TRUE
-            strong: FALSE
-            em: FALSE
-            p: FALSE
-            h1: FALSE
-            h2: FALSE
-            h3: FALSE
-            h4: FALSE
-            h5: FALSE
-            removeFormat: FALSE
+            sub: true
+            sup: true
+            strong: false
+            em: false
+            p: false
+            h1: false
+            h2: false
+            h3: false
+            h4: false
+            h5: false
+            removeFormat: false
           table: []
           link: []
           list: []
           alignment: []
           formatlesspaste:
-            button: FALSE
-            formatlessPasteOption: TRUE
+            button: false
+            formatlessPasteOption: true
 
 'Jonnitto.NodeTypes:MaximumWidthMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     maximumWidth:
       type: string
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.maximumWidth'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: image
           position: 200

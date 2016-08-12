@@ -2,7 +2,7 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Jonnitto.NodeTypes': TRUE
+        'Jonnitto.NodeTypes': true
     userInterface:
       translation:
         autoInclude:
@@ -24,11 +24,11 @@ Jonnitto:
     Image:
       maximumWidth: 2560
       maximumHeight: 1440
-      openOriginalImageInLightbox: FALSE
-      renderRetina: TRUE
+      openOriginalImageInLightbox: false
+      renderRetina: true
       lightbox:
-        class: 'lightbox'
-        target: '_blank'
+        class: lightbox
+        target: _blank
     Notification:
       alert: 'background:#d9534f;'
       warning: 'background:#f0ad4e;'
@@ -37,4 +37,4 @@ Jonnitto:
     container: container
     containerFluid: container-fluid
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
-    externalTarget: '_blank'
+    externalTarget: _blank
