@@ -1,6 +1,7 @@
 prototype(NT:Button) < prototype(NT:InlineEditableLink) {
 	isContentElement = true
 	attributes.class {
+		container >
 		btn = ${config.Button.defaultClassName}
 		style = TS:Array {
 			tagStyle = NT:PropertyFromConfigIfNotSet {
@@ -20,4 +21,7 @@ prototype(NT:Button) < prototype(NT:InlineEditableLink) {
 			prepend = 'btn-link'
 		}
 	}
+
+	wrapClass = ${this.isOnDocument ? this.containerFluid ? this.config.containerFluid : this.config.container : false}
+	@process.wrap = ${this.wrapClass ? '<div class="' + this.wrapClass + '">' + value + '</div>' : value}
 }
