@@ -1,8 +1,0 @@
-// In a newer Neos Version, there will be ContentElementEditable available. Till then use this one
-
-prototype(TYPO3.Neos:ContentElementEditable) {
-	@class = 'Jonnitto\\NodeTypes\\TypoScript\\ContentElementEditableImplementation'
-	node = ${node}
-	property = ${property}
-	value = ${value}
-}
