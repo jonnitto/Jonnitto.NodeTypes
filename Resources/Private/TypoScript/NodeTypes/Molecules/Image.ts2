@@ -4,6 +4,8 @@ prototype(NT:Image) < prototype(NT:Content) {
 	property = 'image'
 	inlineTag = NT:LinkTagName
 
+	@context.asset = ${q(node).property(this.property)}
+
 	containerFluid = ${q(node).property('alignment') == 'bleed'}
 
 	attributes.class {

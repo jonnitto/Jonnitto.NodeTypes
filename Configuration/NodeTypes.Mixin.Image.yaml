@@ -6,7 +6,7 @@
         image:
           label: 'Jonnitto.NodeTypes:NodeTypes.Image:groups.image'
           icon: icon-picture
-          position: 10
+          position: 50
 
 'Jonnitto.NodeTypes:ImageMixin':
   abstract: true
