@@ -1,0 +1,7 @@
+prototype(NT:LinkTarget) < prototype(TS:Value) {
+	property = ${property ? property : 'link'}
+	target = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
+
+	read = ${q(node).property(this.property)}
+	value = ${this.read ? Neos.Link.getScheme(this.read) == 'node' || String.startsWith(this.read, 'mailto:') ? false : this.target : false}
+}

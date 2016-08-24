@@ -1,0 +1,21 @@
+prototype(NT:LinkURI) < prototype(TS:Value) {
+	property = ${property ? property : 'link'}
+	@context.read = ${q(node).property(this.property)}
+	value = TS:Case {
+		isNode {
+			condition = ${Neos.Link.getScheme(read) == 'node'}
+			renderer = NodeUri {
+				node = ${Neos.Link.convertUriToObject(read, node)}
+			}
+		}
+		isAssetOrExternal {
+			condition = ${read}
+			renderer = ${read}
+			renderer.@process.convertUris = TYPO3.Neos:ConvertUris
+		}
+		noLink {
+			condition = true
+			renderer = false
+		}
+	}
+}

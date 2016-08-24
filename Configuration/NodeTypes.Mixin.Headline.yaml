@@ -5,7 +5,6 @@
   properties:
     tagName:
       type: string
-      defaultValue: ''
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.tagName'
         reloadIfChanged: true
@@ -33,7 +32,6 @@
   properties:
     tagStyle:
       type: string
-      defaultValue: ''
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.tagStyle'
         reloadIfChanged: true

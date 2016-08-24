@@ -5,7 +5,6 @@
   properties:
     alignment:
       type: string
-      defaultValue: ''
       ui:
         label: i18n
         reloadIfChanged: true

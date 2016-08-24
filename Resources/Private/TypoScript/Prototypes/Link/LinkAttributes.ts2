@@ -1,0 +1,7 @@
+prototype(NT:LinkAttributes) < prototype(TS:Attributes) {
+	@context.property = 'link'
+	rel = NT:LinRel
+	target = NT:LinkTarget
+	href = NT:LinkURI
+	class = NT:LinkClass
+}

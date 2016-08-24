@@ -1,0 +1,6 @@
+prototype(NT:LinRel) < prototype(TS:Value) {
+	property = ${property ? property : 'link'}
+
+	read = ${q(node).property(this.property)}
+	value = ${this.read && node.context.live ? Neos.Link.getScheme(this.read) == 'node' ? false : 'noopener' : false}
+}
