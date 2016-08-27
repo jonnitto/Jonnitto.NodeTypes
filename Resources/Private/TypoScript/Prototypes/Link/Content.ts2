@@ -1,0 +1,39 @@
+prototype(NT:LinkContent) < prototype(TS:Value) {
+	@context {
+		read = ${q(node).property(this.property)}
+		scheme = ${Neos.Link.getScheme(q(node).property(this.property))}
+	}
+	property = ${property ? property : 'link'}
+
+	value = TS:Case {
+		isAsset {
+			condition = ${scheme == 'asset'}
+			renderer = NT:AssetFileName {
+				@context.asset = ${Neos.Link.convertUriToObject(read)}
+			}
+		}
+		isNode {
+			condition = ${scheme == 'node'}
+			renderer = TS:Value {
+				node = ${Neos.Link.convertUriToObject(read, documentNode)}
+				value = ${q(this.node).property('title')}
+			}
+		}
+		isEmail {
+			condition = ${String.startsWith(read, 'mailto:')}
+			renderer = ${String.replace(read, 'mailto:', '')}
+		}
+		isExternal {
+			condition = ${String.startsWith(read, 'http')}
+			renderer = ${String.pregReplace(read, '/http(s)?:\/\//', '')}
+		}
+		fallback {
+			condition = ${read}
+			renderer = ${Translation.translateById('link.content.fallback', 'Jonnitto.NodeTypes')}
+		}
+		noLink {
+			condition = true
+			renderer = false
+		}
+	}
+}

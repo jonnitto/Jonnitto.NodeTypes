@@ -1,9 +1,5 @@
 prototype(NT:InlineEditableLink) < prototype(NT:InlineEditable) {
 	tagName = NT:LinkTagName
-	attributes = NT:LinkAttributes {
-		class = TS:RawArray {
-			link = NT:LinkClass
-		}
-	}
+	attributes = NT:LinkAttributes
 	@if.render.check = ${q(node).property('link') && q(node).property('text')}
 }

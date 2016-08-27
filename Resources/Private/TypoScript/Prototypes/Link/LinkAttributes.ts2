@@ -3,5 +3,7 @@ prototype(NT:LinkAttributes) < prototype(TS:Attributes) {
 	rel = NT:LinRel
 	target = NT:LinkTarget
 	href = NT:LinkURI
-	class = NT:LinkClass
+	class = TS:RawArray {
+		link = NT:LinkClass
+	}
 }
