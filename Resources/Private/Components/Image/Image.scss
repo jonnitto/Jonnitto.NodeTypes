@@ -8,6 +8,13 @@
 	overflow-x: hidden;
 }
 
+@mixin resetBleedElement {
+	width: 100%;
+	margin: 0;
+	left: inherit;
+	right: inherit;
+}
+
 // scss-lint:disable QualifyingElement
 figure.jonnitto-nodetypes-image,
 .jonnitto-nodetypes-image figure {
@@ -20,7 +27,6 @@ figure.jonnitto-nodetypes-image,
 }
 
 .jonnitto-nodetypes-image {
-
 	figcaption {
 		margin: 0.3em 0;
 	}
@@ -50,4 +56,8 @@ figure.jonnitto-nodetypes-image,
 	&.image-bleed {
 		@include bleedElement;
 	}
+}
+
+.neos-contentcollection .neos-contentcollection .jonnitto-nodetypes-image.image-bleed {
+	@include resetBleedElement;
 }
