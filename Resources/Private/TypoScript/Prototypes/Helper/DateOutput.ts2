@@ -1,0 +1,13 @@
+prototype(NT:DateOutput) < prototype(TS:Template){
+	templatePath = ${'resource://Jonnitto.NodeTypes/Private/Templates/TypoScriptObjects/DateOutput.html'}
+	locale = ${node.context.targetDimensions.language}
+	date = ${date}
+}
+
+prototype(NT:DayOutput) < prototype(NT:DateOutput){
+	sectionName = 'day'
+}
+
+prototype(NT:MonthOutput) < prototype(NT:DateOutput){
+	sectionName = 'month'
+}

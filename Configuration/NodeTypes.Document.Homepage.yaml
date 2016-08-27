@@ -13,9 +13,9 @@
         #  tab: hide # Don't display this group
         visibility:
           tab: hide # Don't display this group
-  childNodes:
-    meta:
-      type: 'TYPO3.Neos:Shortcut'
+#  childNodes:
+#    meta:
+#      type: 'TYPO3.Neos:Shortcut'
 
 
 'TYPO3.Neos:Document':

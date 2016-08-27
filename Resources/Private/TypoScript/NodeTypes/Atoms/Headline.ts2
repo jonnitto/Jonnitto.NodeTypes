@@ -1,5 +1,5 @@
 prototype(NT:Headline) < prototype(NT:InlineEditableTag) {
-	@context.defaultTagName = ${q(documentNode).children('[instanceof TYPO3.Neos:ContentCollection]').children('[instanceof TYPO3.Neos:Content]').get(0) == node ? 'firstTagName' : 'defaultTagName'}
+	@context.defaultTagName = ${this.isFirstElement ? 'firstTagName' : 'defaultTagName'}
 	property = 'title'
 	isContentElement = true
 

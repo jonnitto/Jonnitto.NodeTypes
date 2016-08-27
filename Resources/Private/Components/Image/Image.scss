@@ -1,12 +1,25 @@
-.jonnitto-nodetypes-image {
-	figure {
-		&,
-		> div,
-		> a {
-			width: 100%;
-			display: block;
-		}
+@mixin bleedElement($position: relative) {
+	position: $position;
+	width: 100vw;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	overflow-x: hidden;
+}
+
+// scss-lint:disable QualifyingElement
+figure.jonnitto-nodetypes-image,
+.jonnitto-nodetypes-image figure {
+	&,
+	> div,
+	> a {
+		width: 100%;
+		display: block;
 	}
+}
+
+.jonnitto-nodetypes-image {
 
 	figcaption {
 		margin: 0.3em 0;
@@ -32,5 +45,9 @@
 			width: 100%;
 			object-fit: contain;
 		}
+	}
+
+	&.image-bleed {
+		@include bleedElement;
 	}
 }

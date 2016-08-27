@@ -1,0 +1,8 @@
+
+<f:section name="day">
+	<f:format.date forceLocale="{locale}" cldrFormat="d" date="{date}" /><f:if condition="{locale} == 'de'">.</f:if>
+</f:section>
+
+<f:section name="month">
+	<f:format.date forceLocale="{locale}" cldrFormat="MMMM" date="{date}" />
+</f:section>

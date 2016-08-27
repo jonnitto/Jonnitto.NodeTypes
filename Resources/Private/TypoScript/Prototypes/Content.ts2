@@ -7,12 +7,15 @@ prototype(NT:Content) < prototype(TS:Tag) {
 		isContentElement = ${this.isContentElement}
 		containerFluid = ${this.containerFluid}
 		isOnDocument = ${this.isOnDocument}
+		isFirstElement = ${this.isFirstElement}
 	}
 
 	property = NULL
 	tagName = 'div'
 	isContentElement = false
 	containerFluid = false
+	isFirstElement = NT:IsFirstElement
+	isFirstElement.@if.isContentElement = ${this.isContentElement}
 
 	isOnDocument = ${q(node).parent().parent().is(this.config.instanceOfDocument)}
 	config = ${Configuration.setting('Jonnitto.NodeTypes')}

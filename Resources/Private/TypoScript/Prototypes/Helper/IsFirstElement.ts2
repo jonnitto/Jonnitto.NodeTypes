@@ -1,0 +1,8 @@
+prototype(NT:IsFirstElement) < prototype(TS:Value) {
+	true = true
+	false = false
+	node = ${node}
+	collection = '[instanceof TYPO3.Neos:ContentCollection]'
+	content = '[instanceof TYPO3.Neos:Content]'
+	value = ${q(documentNode).children(this.collection).children(this.content).get(0) == this.node ? this.true : this.false}
+}
