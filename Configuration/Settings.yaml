@@ -22,8 +22,10 @@ Jonnitto:
       defaultClassName: btn
       defaultStyle: secondary
     Image:
-      maximumWidth: 2560
-      maximumHeight: 1440
+      maximumWidth: 1440
+      maximumHeight: 1280
+      bleedWidth: 1920
+      bleedHeight: 1680
       openOriginalImageInLightbox: false
       renderRetina: true
       lightbox:

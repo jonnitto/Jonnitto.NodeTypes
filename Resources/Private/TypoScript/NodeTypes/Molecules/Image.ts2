@@ -3,10 +3,11 @@ prototype(NT:Image) < prototype(NT:Content) {
 	tagName = 'figure'
 	property = 'image'
 	inlineTag = NT:LinkTagName
-
-	@context.asset = ${q(node).property(this.property)}
-
 	containerFluid = ${q(node).property('alignment') == 'bleed'}
+
+	@context {
+		asset = ${q(node).property(this.property)}
+	}
 
 	attributes.class {
 		alignment = NT:WrapIfPropertyIsSet {
@@ -14,6 +15,19 @@ prototype(NT:Image) < prototype(NT:Content) {
 			prepend = 'image-'
 		}
 		isFirstElement = ${isFirstElement ? 'image-first' : false}
+	}
+
+	prototype(NT:Plainimage) {
+		bleedWidth = NT:PropertyFromConfigIfNotSet {
+			property = 'maximumWidth'
+			configuration = 'Image.bleedWidth'
+		}
+		bleedHeight = ${config.Image.bleedHeight}
+
+		@context {
+			maximumWidth = ${containerFluid ? this.bleedWith : this.maximumWidth}
+			maximumHeight = ${containerFluid ? this.bleedHeight : this.maximumHeight}
+		}
 	}
 
 	content = TS:Array {
