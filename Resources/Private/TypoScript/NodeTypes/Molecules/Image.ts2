@@ -29,7 +29,6 @@ prototype(NT:Image) < prototype(NT:Content) {
 			maximumHeight = ${containerFluid ? this.bleedHeight : this.maximumHeight}
 		}
 	}
-
 	content = TS:Array {
 		image = TS:Case {
 			hasLink {

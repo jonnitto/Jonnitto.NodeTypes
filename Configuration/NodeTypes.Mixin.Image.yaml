@@ -6,7 +6,7 @@
         image:
           label: 'Jonnitto.NodeTypes:NodeTypes.Image:groups.image'
           icon: icon-picture
-          position: 50
+          position: 40
 
 'Jonnitto.NodeTypes:ImageMixin':
   abstract: true
@@ -61,7 +61,7 @@
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.lightbox'
         inspector:
-          group: image
+          group: settings
           position: 800
 
 'Jonnitto.NodeTypes:ImageCaptionMixin':
