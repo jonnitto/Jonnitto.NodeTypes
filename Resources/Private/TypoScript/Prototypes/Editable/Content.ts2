@@ -31,11 +31,6 @@ prototype(NT:Content) < prototype(TS:Tag) {
 
 	content = ''
 
-	@process.contentElementWrapping = TS:Case {
-		isContentElement {
-			condition = ${isContentElement}
-			renderer = ContentElementWrapping
-		}
-	}
+	@process.contentElementWrapping = ContentElementWrapping
 	@if.render = NT:NeededProperties
 }
