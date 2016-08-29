@@ -8,39 +8,45 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 		allowCropping = ${this.allowCropping}
 		allowUpScaling = ${this.allowUpScaling}
 		dummyImage = ${node.context.inBackend && !this.asset}
+		ratio = ${this.ratio}
 	}
 	tagName = 'img'
 	property = ${property ? property : 'image'}
 	title = ${title ? title : 'title'}
 	alternativeText = ${alternativeText ? alternativeText : 'alternativeText'}
 	asset = ${q(node).property(this.property)}
+	ratio = TS:Case {
+		@context.roundValue = ${asset.width > 899 ? 40 : asset.width > 499 ? 20 : asset.width > 199 ? 10 : asset.width > 99 ? 5 : asset.width > 49 ? 2 : 1}
+		isSquare {
+			condition = ${Math.round(asset.width / roundValue) == Math.round(asset.height / roundValue)}
+			renderer = 'square'
+		}
+		isLandscape {
+			condition = ${asset.width > asset.height}
+			renderer = 'landscape'
+		}
+		isPortrait {
+			condition = ${asset.width < asset.height}
+			renderer = 'portrait'
+		}
+	}
+
+
 	maximumWidth = NT:PropertyFromConfigIfNotSet {
 		property = 'maximumWidth'
 		configuration = 'Image.maximumWidth'
 	}
+
 	maximumHeight = ${config.Image.maximumHeight}
 
 	allowCropping = false
 	allowUpScaling = false
 
 	attributes = TS:Attributes {
+		data-ratio = ${ratio}
 		class = TS:RawArray {
 			type = ${dummyImage? 'neos-handle' : 'img-plain'}
-			ratio = TS:Case {
-				@context.roundValue = ${asset.width > 199 ? 10 : asset.width > 99 ? 5 : asset.width > 49 ? 2 : 1}
-				isSquare {
-					condition = ${Math.round(asset.width / roundValue) == Math.round(asset.height / roundValue)}
-					renderer = 'img-square'
-				}
-				isLandscape {
-					condition = ${asset.width > asset.height}
-					renderer = 'img-landscape'
-				}
-				isPortrait {
-					condition = ${asset.width < asset.height}
-					renderer = 'img-portrait'
-				}
-			}
+			ratio = ${'img-' + ratio}
 			alignment = NT:WrapIfPropertyIsSet {
 				property = 'alignment'
 				prepend = 'img-'
