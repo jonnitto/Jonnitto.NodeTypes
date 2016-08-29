@@ -1,0 +1,34 @@
+prototype(NT:AssetList) < prototype(NT:Content) {
+	property = 'assets'
+	forceDownload = ${q(node).property('forceDownload')}
+	target = ${this.forceDownload ? false : Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
+	isContentElement = true
+
+	@context {
+		target =${this.target}
+		assets = ${q(node).property(this.property)}
+		forceDownload = ${this.forceDownload}
+	}
+
+	attributes.class {
+		assets = ${assets ? 'assets-count-' + Array.length(assets): false}
+	}
+
+	content = TS:Case {
+		hasAssets {
+			condition = ${assets ? true : false}
+			renderer = NT:AssetCollection
+		}
+		default {
+			condition = true
+			renderer = TS:Tag {
+				attributes.style = TS:Array {
+					default = ${config.Notification.style}
+					type = ${config.Notification.warning}
+				}
+				content = ${Translation.translate('content.emptyAssetList', null, [], 'NodeTypes/AssetList', 'Jonnitto.NodeTypes')}
+				@if.inEditMode = ${node.context.currentRenderingMode.edit}
+			}
+		}
+	}
+}

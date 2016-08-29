@@ -1,4 +1,7 @@
 privilegeTargets:
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Jonnitto.NodeTypes:Frontend.Download':
+      matcher: 'method(Jonnitto\NodeTypes\Controller\DownloadController->downloadAction())'
   'TYPO3\TYPO3CR\Security\Authorization\Privilege\Node\CreateNodePrivilege':
     'Jonnitto.NodeTypes:BackendNotificationCreate':
       matcher: nodeIsOfType("Jonnitto.NodeTypes:BackendNotification")
@@ -7,6 +10,12 @@ privilegeTargets:
       matcher: nodeIsOfType("Jonnitto.NodeTypes:BackendNotification")
 
 roles:
+  'TYPO3.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'Jonnitto.NodeTypes:Frontend.Download'
+        permission: GRANT
+
   'TYPO3.Neos:Administrator':
     privileges:
       -

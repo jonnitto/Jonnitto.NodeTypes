@@ -1,0 +1,41 @@
+prototype(NT:AssetFile) < prototype(TS:Tag) {
+	tagName = 'a'
+	attributes {
+		target = TS:Case {
+			isForceDownload {
+				condition = ${forceDownload}
+				renderer = false
+			}
+			isBoolean {
+				condition = ${Type.isBoolean(target)}
+				renderer = ${target}
+			}
+			default {
+				condition = true
+				renderer = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
+			}
+
+		}
+		href = TS:Case {
+			@if.islive = ${node.context.live}
+			forceDownload {
+				condition = ${forceDownload}
+				renderer = TS:UriBuilder {
+					package = 'Jonnitto.NodeTypes'
+					controller = 'ForceDownload'
+					action = 'forceDownload'
+					arguments {
+						resource = ${asset.resource}
+					}
+				}
+			}
+			default {
+				condition = true
+				renderer = TS:ResourceUri {
+					resource = ${asset.resource}
+				}
+			}
+		}
+	}
+	content = NT:AssetFileName
+}

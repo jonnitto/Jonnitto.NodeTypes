@@ -1,0 +1,12 @@
+prototype(NT:AssetCollection) < prototype(TS:Collection) {
+	collection = ${assets}
+	itemName = 'asset'
+	iterationName = 'iterator'
+	itemRenderer = NT:AssetFile {
+		@process {
+			liTag = ${'<li>' + value + '</li>'}
+			ulOpen = ${iterator.isFirst ? '<ul>' + value : value}
+			ulClose = ${iterator.isLast ? value + '</ul>' : value}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+# Make sure to include the following commented route before the TYPO3.Neos subroutes in your global /Configuration/Routes.yaml
+
+# -
+#   name: 'Jonnitto NodeTypes'
+#   uriPattern: '<JonnittoNodeTypesSubroutes>'
+#   subRoutes:
+#     'JonnittoNodeTypesSubroutes':
+#       package: Jonnitto.NodeTypes
+
+
+##
+#  Downloads
+
+-
+  name: 'Download'
+  uriPattern: 'download/{resource}'
+  defaults:
+    '@package':  'Jonnitto.NodeTypes'
+    '@controller': 'Download'
+    '@action':   'download'

@@ -1,0 +1,17 @@
+prototype(NT:AssetFileName) < prototype(TS:Array) {
+	title = TS:Case {
+		hasTitle {
+			condition = ${asset.title}
+			renderer = ${asset.title}
+		}
+		default {
+			condition = true
+			renderer = ${String.replace(asset.resource.filename, '.' + asset.resource.fileextension, '')}
+		}
+		@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
+	}
+	caption = ${asset.caption}
+	fileextension = ${' <small>(' + asset.resource.fileextension + ')</small>'}
+
+	@if.hasAsset = ${asset}
+}
