@@ -1,4 +1,17 @@
-prototype(NT:Plainimage) < prototype(TS:Tag) {
+prototype(NT:Plainimage) < prototype(TS:Value) {
+	property = ${property ? property : 'image'}
+	title = ${title ? title : 'title'}
+	alternativeText = ${alternativeText ? alternativeText : 'alternativeText'}
+	asset = ${q(node).property(this.property)}
+	maximumWidth = NT:PropertyFromConfigIfNotSet {
+		property = 'maximumWidth'
+		configuration = 'Image.maximumWidth'
+	}
+	maximumHeight = ${config.Image.maximumHeight}
+	allowCropping = false
+	allowUpScaling = false
+
+
 	@context {
 		asset = ${this.asset}
 		titleText = ${this.title ? q(node).property(this.title) : false}
@@ -8,100 +21,95 @@ prototype(NT:Plainimage) < prototype(TS:Tag) {
 		allowCropping = ${this.allowCropping}
 		allowUpScaling = ${this.allowUpScaling}
 		dummyImage = ${node.context.inBackend && !this.asset}
-		ratio = ${this.ratio}
-	}
-	tagName = 'img'
-	property = ${property ? property : 'image'}
-	title = ${title ? title : 'title'}
-	alternativeText = ${alternativeText ? alternativeText : 'alternativeText'}
-	asset = ${q(node).property(this.property)}
-	ratio = TS:Case {
-		@context.roundValue = ${asset.width > 899 ? 40 : asset.width > 499 ? 20 : asset.width > 199 ? 10 : asset.width > 99 ? 5 : asset.width > 49 ? 2 : 1}
-		isSquare {
-			condition = ${Math.round(asset.width / roundValue) == Math.round(asset.height / roundValue)}
-			renderer = 'square'
-		}
-		isLandscape {
-			condition = ${asset.width > asset.height}
-			renderer = 'landscape'
-		}
-		isPortrait {
-			condition = ${asset.width < asset.height}
-			renderer = 'portrait'
-		}
 	}
 
+	value = TS:Tag {
+		ratio = TS:Case {
+			roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 5)}
+			@context {
+				width = ${Math.round(asset.width / this.roundValue)}
+				height = ${Math.round(asset.height / this.roundValue)}
+			}
+			@ignoreProperties = ${['asset','roundValue']}
 
-	maximumWidth = NT:PropertyFromConfigIfNotSet {
-		property = 'maximumWidth'
-		configuration = 'Image.maximumWidth'
-	}
-
-	maximumHeight = ${config.Image.maximumHeight}
-
-	allowCropping = false
-	allowUpScaling = false
-
-	attributes = TS:Attributes {
-		data-ratio = ${ratio}
-		class = TS:RawArray {
-			type = ${dummyImage? 'neos-handle' : 'img-plain'}
-			ratio = ${'img-' + ratio}
-			alignment = NT:WrapIfPropertyIsSet {
-				property = 'alignment'
-				prepend = 'img-'
+			isSquare {
+				condition = ${width == height}
+				renderer = ${'square'}
+			}
+			isLandscape {
+				condition = ${width > height}
+				renderer = 'landscape'
+			}
+			isPortrait {
+				condition = ${width < height}
+				renderer = 'portrait'
 			}
 		}
-		title = ${titleText}
-		alt = ${altText}
-		src = TS:Case {
-			hasImage {
-				condition = ${asset}
-				renderer = ImageUri {
+		@context.ratio = ${this.ratio}
+
+		@ignoreProperties = ${['ratio']}
+		tagName = 'img'
+		attributes = TS:Attributes {
+			class = TS:RawArray {
+				type = ${dummyImage? 'neos-handle' : 'img-plain'}
+				ratio = ${'img-' + ratio}
+				alignment = NT:WrapIfPropertyIsSet {
+					property = 'alignment'
+					prepend = 'img-'
+				}
+			}
+			title = ${titleText}
+			alt = ${altText}
+			src = TS:Case {
+				hasImage {
+					condition = ${asset}
+					renderer = ImageUri {
+						asset = ${asset}
+						maximumWidth = ${maximumWidth}
+						maximumHeight = ${maximumHeight}
+						allowCropping = ${allowCropping}
+						allowUpScaling = ${allowUpScaling}
+					}
+				}
+				inEditMode {
+					condition = true
+					renderer = TS:ResourceUri {
+						package = 'TYPO3.Neos'
+						path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+					}
+				}
+			}
+			srcset = TS:Array {
+				1 = ImageUri {
 					asset = ${asset}
 					maximumWidth = ${maximumWidth}
 					maximumHeight = ${maximumHeight}
 					allowCropping = ${allowCropping}
 					allowUpScaling = ${allowUpScaling}
+					@process.addResolution = ${value + ' 1x'}
 				}
-			}
-			inEditMode {
-				condition = true
-				renderer = TS:ResourceUri {
-					package = 'TYPO3.Neos'
-					path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+				2 = ImageUri {
+					asset = ${asset}
+					maximumWidth = ${maximumWidth * 2}
+					maximumHeight = ${maximumHeight * 2}
+					allowCropping = ${allowCropping}
+					allowUpScaling = ${allowUpScaling}
+					@process.addResolution = ${',' + value + ' 2x'}
+					@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
 				}
+				3 = ImageUri {
+					asset = ${asset}
+					maximumWidth = ${maximumWidth * 3}
+					maximumHeight = ${maximumHeight * 3}
+					allowCropping = ${allowCropping}
+					allowUpScaling = ${allowUpScaling}
+					@process.addResolution = ${',' + value + ' 3x'}
+					@if.hasEnoughPixel = ${asset.width >= maximumWidth * 3 && asset.height >= maximumHeight * 3}
+				}
+				@if.hasAsset = ${asset}
 			}
 		}
-		srcset = TS:Array {
-			1 = ImageUri {
-				asset = ${asset}
-				maximumWidth = ${maximumWidth}
-				maximumHeight = ${maximumHeight}
-				allowCropping = ${allowCropping}
-				allowUpScaling = ${allowUpScaling}
-				@process.addResolution = ${value + ' 1x'}
-			}
-			2 = ImageUri {
-				asset = ${asset}
-				maximumWidth = ${maximumWidth * 2}
-				maximumHeight = ${maximumHeight * 2}
-				allowCropping = ${allowCropping}
-				allowUpScaling = ${allowUpScaling}
-				@process.addResolution = ${',' + value + ' 2x'}
-				@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
-			}
-			3 = ImageUri {
-				asset = ${asset}
-				maximumWidth = ${maximumWidth * 3}
-				maximumHeight = ${maximumHeight * 3}
-				allowCropping = ${allowCropping}
-				allowUpScaling = ${allowUpScaling}
-				@process.addResolution = ${',' + value + ' 3x'}
-				@if.hasEnoughPixel = ${asset.width >= maximumWidth * 3 && asset.height >= maximumHeight * 3}
-			}
-			@if.hasAsset = ${asset}
-		}
+
 	}
 
 	@if.render = NT:NeededProperties {

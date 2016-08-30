@@ -22,8 +22,8 @@ prototype(NT:AssetFile) < prototype(TS:Tag) {
 				condition = ${forceDownload}
 				renderer = TS:UriBuilder {
 					package = 'Jonnitto.NodeTypes'
-					controller = 'ForceDownload'
-					action = 'forceDownload'
+					controller = 'Download'
+					action = 'download'
 					arguments {
 						resource = ${asset.resource}
 					}
