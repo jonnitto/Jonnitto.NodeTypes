@@ -20,17 +20,16 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 		maximumHeight = ${this.maximumHeight}
 		allowCropping = ${this.allowCropping}
 		allowUpScaling = ${this.allowUpScaling}
-		dummyImage = ${node.context.inBackend && !this.asset}
 	}
 
 	value = TS:Tag {
 		ratio = TS:Case {
-			roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 5)}
+			roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 10)}
 			@context {
-				width = ${Math.round(asset.width / this.roundValue)}
-				height = ${Math.round(asset.height / this.roundValue)}
+				width = ${Math.ceil(asset.width / this.roundValue)}
+				height = ${Math.ceil(asset.height / this.roundValue)}
 			}
-			@ignoreProperties = ${['asset','roundValue']}
+			@ignoreProperties = ${['roundValue']}
 
 			isSquare {
 				condition = ${width == height}
@@ -45,7 +44,10 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 				renderer = 'portrait'
 			}
 		}
-		@context.ratio = ${this.ratio}
+		@context {
+			dummyImage = ${node.context.inBackend && !asset}
+			ratio = ${this.ratio}
+		}
 
 		@ignoreProperties = ${['ratio']}
 		tagName = 'img'

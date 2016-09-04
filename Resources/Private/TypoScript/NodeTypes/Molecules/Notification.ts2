@@ -1,4 +1,4 @@
-prototype(NT:Notification) < prototype(NT:InlineEditableTag) {
+prototype(NT:Notification) < prototype(NT:InlineEditable) {
 	isContentElement = true
 	attributes.style = TS:Array {
 		default = ${config.Notification.style}
