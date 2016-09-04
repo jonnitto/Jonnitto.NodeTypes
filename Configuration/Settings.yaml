@@ -12,6 +12,7 @@ TYPO3:
         special:
           position: 400
           label: 'Jonnitto.NodeTypes:NodeTypes.Groups:special'
+          collapsed: true
 
 Jonnitto:
   NodeTypes:
