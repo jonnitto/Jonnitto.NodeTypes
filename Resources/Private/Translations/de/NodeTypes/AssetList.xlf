@@ -17,6 +17,9 @@
 			<trans-unit id="content.emptyAssetList" xml:space="preserve">
 				<source>Es wurden keine Dateien im Inspektor ausgewählt.</source>
 			</trans-unit>
+			<trans-unit id="properties.thumbnail" xml:space="preserve">
+				<source>Vorschaubild anzeigen</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

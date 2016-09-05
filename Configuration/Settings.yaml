@@ -41,3 +41,6 @@ Jonnitto:
     containerFluid: false
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
     externalTarget: _blank
+    assetlist:
+      thumbnail:
+        width: 200

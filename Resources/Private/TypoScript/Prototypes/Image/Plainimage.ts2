@@ -3,6 +3,9 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 	title = ${title ? title : 'title'}
 	alternativeText = ${alternativeText ? alternativeText : 'alternativeText'}
 	asset = ${q(node).property(this.property)}
+	checkRatio = true
+	additionalClass = false
+
 	maximumWidth = NT:PropertyFromConfigIfNotSet {
 		property = 'maximumWidth'
 		configuration = 'Image.maximumWidth'
@@ -20,6 +23,8 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 		maximumHeight = ${this.maximumHeight}
 		allowCropping = ${this.allowCropping}
 		allowUpScaling = ${this.allowUpScaling}
+		checkRatio = ${this.checkRatio}
+		additionalClass = ${this.additionalClass}
 	}
 
 	value = TS:Tag {
@@ -55,6 +60,8 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 			class = TS:RawArray {
 				type = ${dummyImage? 'neos-handle' : 'img-plain'}
 				ratio = ${'img-' + ratio}
+				ratio.@if.checkRatio = ${checkRatio}
+				additionalClass = ${additionalClass}
 				alignment = NT:WrapIfPropertyIsSet {
 					property = 'alignment'
 					prepend = 'img-'

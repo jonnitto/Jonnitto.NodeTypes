@@ -1,6 +1,9 @@
 prototype(NT:AssetFile) < prototype(TS:Tag) {
 	tagName = 'a'
 	attributes {
+		class = TS:RawArray {
+			type = ${'asset-type-' + asset.resource.fileextension}
+		}
 		target = TS:Case {
 			isForceDownload {
 				condition = ${forceDownload}

@@ -1,17 +1,40 @@
 prototype(NT:AssetFileName) < prototype(TS:Array) {
-	title = TS:Case {
-		hasTitle {
-			condition = ${asset.title}
-			renderer = ${asset.title}
+	thumbnail = TS:Tag {
+		tagName = 'figure'
+		attributes.class = TS:RawArray {
+			thumb = 'asset-thumbnail'
 		}
-		default {
-			condition = true
-			renderer = ${String.replace(asset.resource.filename, '.' + asset.resource.fileextension, '')}
+		content = NT:Plainimage {
+			asset = ${asset}
+			maximumWidth = ${config.assetlist.thumbnail.width}
+			checkRatio = false
+			additionalClass = 'img-asset-thumbnail'
 		}
-		@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
+
+		@if.active = ${thumbnail ? true : false}
 	}
-	caption = ${asset.caption}
-	fileextension = ${' <small>(' + asset.resource.fileextension + ')</small>'}
+
+	text = TS:Tag {
+		tagName = 'span'
+		attributes.class = TS:RawArray {
+			text = 'asset-text'
+		}
+		content = TS:Array {
+			title = TS:Case {
+				hasTitle {
+					condition = ${asset.title}
+					renderer = ${asset.title}
+				}
+				default {
+					condition = true
+					renderer = ${String.replace(asset.resource.filename, '.' + asset.resource.fileextension, '')}
+				}
+				@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
+			}
+			caption = ${asset.caption}
+			fileextension = ${' <small>(' + asset.resource.fileextension + ')</small>'}
+		}
+	}
 
 	@if.hasAsset = ${asset}
 }

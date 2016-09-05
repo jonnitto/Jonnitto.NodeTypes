@@ -26,3 +26,10 @@
         label: i18n
         inspector:
           group: resources
+    thumbnail:
+      type: boolean
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: resources
