@@ -1,0 +1,5 @@
+prototype(NT:GetClosestFromArrayProperty) < prototype(TS:Value) {
+	property = 'property'
+	array = ${Neos.Array.filter(q(node).add(q(node).parents()).get(), 'properties.' + this.property)}
+	value = ${q(Array.first(this.array)).property(this.property)}
+}
