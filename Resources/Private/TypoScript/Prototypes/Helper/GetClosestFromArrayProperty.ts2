@@ -1,5 +1,22 @@
-prototype(NT:GetClosestFromArrayProperty) < prototype(TS:Value) {
+prototype(NT:GetClosestFromArrayProperty) < prototype(TS:Case) {
 	property = 'property'
-	array = ${Neos.Array.filter(q(node).add(q(node).parents()).get(), 'properties.' + this.property)}
-	value = ${q(Array.first(this.array)).property(this.property)}
+	allNodes = ${q(node).add(q(node).parents()).get()}
+	array = ${Neos.Array.filter(this.allNodes, 'properties.' + this.property)}
+
+	@ignoreProperties = ${['property','allNodes','array']}
+
+	@context {
+		property = ${this.property}
+		array = ${this.array}
+	}
+
+	returnFirstArrayElement {
+		condition = ${Type.isArray(array) && Array.length(array)? true : false}
+		renderer = ${q(Array.first(array)).property(property)}
+	}
+
+	returnFalse {
+		condition = true
+		renderer = false
+	}
 }

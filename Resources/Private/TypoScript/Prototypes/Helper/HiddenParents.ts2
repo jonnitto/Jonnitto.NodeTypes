@@ -1,0 +1,11 @@
+prototype(NT:HiddenParents) < prototype(TS:Value) {
+	item = ${node}
+	visibleCount = ${q(this.item).parents().count()}
+	invisibleCount = ${q(this.item).context({'invisibleContentShown': true}).parents().count()}
+
+	value = ${this.visibleCount != this.invisibleCount ? true : false}
+}
+
+prototype(NT:VisibleParents) < prototype(NT:HiddenParents) {
+	value = ${this.visibleCount == this.invisibleCount ? true : false}
+}
