@@ -1,31 +1,13 @@
 prototype(NT:LinkClass) < prototype(TS:Value) {
-	@context {
-		prepend = ${this.prepend}
-		read = ${q(node).property(this.property)}
-		scheme = ${Neos.Link.getScheme(q(node).property(this.property))}
-		divider = ${this.divider}
-	}
-
 	property = ${property ? property : 'link'}
 	prepend = ${this.property}
 	divider = '-'
 
-	value = TS:Case {
-		hasScheme {
-			condition = ${scheme}
-			renderer = ${prepend + divider + scheme}
-		}
-		isEmail {
-			condition = ${String.startsWith(read, 'mailto:')}
-			renderer = ${prepend + divider + 'mail'}
-		}
-		isExternal {
-			condition = ${read}
-			renderer = ${prepend + divider + 'external'}
-		}
-		noLink {
-			condition = true
-			renderer = false
-		}
+	@context.read = ${q(node).property(this.property)}
+
+	linkType = NT:LinkType {
+		read = ${read}
 	}
+
+	value = ${this.linkType ? this.prepend + this.divider + this.linkType : false}
 }

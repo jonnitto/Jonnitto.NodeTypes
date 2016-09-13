@@ -1,23 +1,34 @@
 # Check if the Link is valid and possible (Hidden parent Pages)
-prototype(NT:ValidLink) < prototype(TS:Case) {
+prototype(NT:ValidLink) < prototype(TS:Value) {
 	property = ${property ? property : 'link'}
 	@context.read = ${q(node).property(this.property)}
-	@ignoreProperties = ${['property']}
 
-	isNode {
-		condition = ${Neos.Link.getScheme(read) == 'node'}
-		renderer = NT:VisibleParents {
-			item = ${Neos.Link.convertUriToObject(read, documentNode)}
+	value = TS:Case {
+		@context.linkType = NT:LinkType {
+			read = ${read}
+		}
+		isNode {
+			condition = ${linkType == 'node'}
+			renderer = NT:VisibleParents {
+				item = ${Neos.Link.convertUriToObject(read, documentNode)}
+			}
+		}
+		isAssetOrExternal {
+			condition = ${read}
+			renderer = true
+		}
+
+		noLink {
+			condition = true
+			renderer = false
 		}
 	}
+}
 
-	isAssetOrExternal {
-		condition = ${read}
+prototype(NT:ValidLinkOrBackend) < prototype(NT:ValidLink) {
+	value.isBackend {
+		condition = ${node.context.inBackend}
 		renderer = true
-	}
-
-	noLink {
-		condition = true
-		renderer = false
+		@position = 'start'
 	}
 }

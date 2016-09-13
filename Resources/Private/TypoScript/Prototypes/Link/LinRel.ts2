@@ -1,6 +1,32 @@
 prototype(NT:LinRel) < prototype(TS:Value) {
 	property = ${property ? property : 'link'}
+	rel = 'noopener'
 
-	read = ${q(node).property(this.property)}
-	value = ${this.read && node.context.live ? Neos.Link.getScheme(this.read) == 'node' ? false : 'noopener' : false}
+	@context {
+		read = ${q(node).property(this.property)}
+		rel = ${this.rel}
+	}
+
+	value = TS:Case {
+		@context.linkType = NT:LinkType {
+			read = ${read}
+		}
+		inBackend {
+			condition = ${node.context.inBackend}
+			renderer = false
+			@position = 'start 1'
+		}
+		isNode {
+			condition = ${linkType == 'node'}
+			renderer = false
+		}
+		isHash {
+			condition = ${linkType == 'hash'}
+			renderer = false
+		}
+		default {
+			condition = true
+			renderer = ${rel}
+		}
+	}
 }

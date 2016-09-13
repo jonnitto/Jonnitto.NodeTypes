@@ -2,8 +2,11 @@ prototype(NT:LinkURI) < prototype(TS:Value) {
 	property = ${property ? property : 'link'}
 	@context.read = ${q(node).property(this.property)}
 	value = TS:Case {
+		@context.linkType = NT:LinkType {
+			read = ${read}
+		}
 		isNode {
-			condition = ${Neos.Link.getScheme(read) == 'node'}
+			condition = ${linkType == 'node'}
 			renderer = NodeUri {
 				node = ${Neos.Link.convertUriToObject(read, node)}
 			}
