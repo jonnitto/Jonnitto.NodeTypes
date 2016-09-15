@@ -20,19 +20,35 @@ prototype(NT:AssetFileName) < prototype(TS:Array) {
 			text = 'asset-text'
 		}
 		content = TS:Array {
-			title = TS:Case {
-				hasTitle {
-					condition = ${asset.title}
-					renderer = ${asset.title}
+			file = TS:Tag {
+				tagName = 'span'
+				attributes.class = TS:RawArray {
+					text = 'asset-text-file'
 				}
-				default {
-					condition = true
-					renderer = ${String.replace(asset.resource.filename, '.' + asset.resource.fileextension, '')}
+				content = TS:Array {
+					title = TS:Case {
+						hasTitle {
+							condition = ${asset.title}
+							renderer = ${asset.title}
+						}
+						default {
+							condition = true
+							renderer = ${String.replace(String.replace(asset.resource.filename, '_', ' '), '.' + asset.resource.fileextension, '')}
+						}
+						@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
+					}
+					caption = ${asset.caption}
 				}
-				@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
 			}
-			caption = ${asset.caption}
-			fileextension = ${' <small>(' + asset.resource.fileextension + ')</small>'}
+			divider = ' '
+			info = TS:Tag {
+				tagName = 'small'
+				content = TS:Array {
+					fileextension = ${asset.resource.fileextension}
+					divider = ', '
+					filesize = NT:Filesize
+				}
+			}
 		}
 	}
 

@@ -14,6 +14,7 @@ prototype(NT:AssetList) < prototype(NT:Content) {
 
 	attributes.class {
 		assets = ${assets ? 'assets-count-' + Array.length(assets): false}
+		thumbnail = ${'assets-list-' + (thumbnail ? 'thumbnail' : 'text')}
 	}
 
 	content = TS:Case {
