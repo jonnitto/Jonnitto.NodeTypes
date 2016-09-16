@@ -2,11 +2,9 @@ prototype(NT:AssetList) < prototype(NT:Content) {
 	property = 'assets'
 	forceDownload = ${q(node).property('forceDownload')}
 	thumbnail = ${q(node).property('thumbnail')}
-	target = ${this.forceDownload ? false : Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
 	isContentElement = true
 
 	@context {
-		target =${this.target}
 		assets = ${q(node).property(this.property)}
 		forceDownload = ${this.forceDownload}
 		thumbnail = ${this.thumbnail}

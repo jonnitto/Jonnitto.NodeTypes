@@ -5,20 +5,8 @@
 			<trans-unit id="ui.label" xml:space="preserve">
 				<source>Asset List</source>
 			</trans-unit>
-			<trans-unit id="groups.resources" xml:space="preserve">
-				<source>Resources</source>
-			</trans-unit>
-			<trans-unit id="properties.assets" xml:space="preserve">
-				<source>Assets</source>
-			</trans-unit>
-			<trans-unit id="properties.forceDownload" xml:space="preserve">
-				<source>Force download</source>
-			</trans-unit>
 			<trans-unit id="content.emptyAssetList" xml:space="preserve">
 				<source>No files where choosen in the inspector.</source>
-			</trans-unit>
-			<trans-unit id="properties.thumbnail" xml:space="preserve">
-				<source>Show Thumbnail</source>
 			</trans-unit>
 		</body>
 	</file>

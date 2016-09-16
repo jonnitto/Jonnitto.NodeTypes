@@ -2,7 +2,8 @@ prototype(NT:AssetFile) < prototype(TS:Tag) {
 	tagName = 'a'
 	attributes {
 		class = TS:RawArray {
-			type = ${'asset-type-' + asset.resource.fileextension}
+			fileextension = ${'asset-type-' + asset.resource.fileextension}
+			type = ${'asset-item-' + (thumbnail ? 'thumbnail' : 'text')}
 		}
 		target = TS:Case {
 			isForceDownload {
@@ -17,7 +18,6 @@ prototype(NT:AssetFile) < prototype(TS:Tag) {
 				condition = true
 				renderer = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
 			}
-
 		}
 		href = TS:Case {
 			@if.islive = ${node.context.live}
