@@ -1,7 +1,7 @@
 prototype(NT:HiddenParents) < prototype(Fusion:Value) {
 	item = ${node}
-	visibleCount = ${q(this.item).parents().count()}
-	invisibleCount = ${q(this.item).context({'invisibleContentShown': true}).parents().count()}
+	visibleCount = ${this.item ? q(this.item).parents().count() : false}
+	invisibleCount = ${this.item ? q(this.item).context({'invisibleContentShown': true}).parents().count() : false}
 
 	value = ${this.visibleCount != this.invisibleCount ? true : false}
 }
