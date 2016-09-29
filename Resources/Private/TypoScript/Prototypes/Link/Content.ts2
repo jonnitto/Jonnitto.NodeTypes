@@ -30,7 +30,7 @@ prototype(NT:LinkContent) < prototype(Fusion:Value) {
 		}
 		fallback {
 			condition = ${read}
-			renderer = ${Translation.translateById('link.content.fallback', 'Jonnitto.NodeTypes')}
+			renderer = ${Translation.translate('link.content.fallback', null, [], null, 'Jonnitto.NodeTypes')}
 		}
 		noLink {
 			condition = true
