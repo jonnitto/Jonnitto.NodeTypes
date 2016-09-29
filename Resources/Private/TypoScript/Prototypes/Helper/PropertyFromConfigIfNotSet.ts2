@@ -1,4 +1,4 @@
-prototype(NT:PropertyFromConfigIfNotSet) < prototype(TS:Value) {
+prototype(NT:PropertyFromConfigIfNotSet) < prototype(Fusion:Value) {
 	property = NULL
 	configuration = NULL
 	prepend = ''

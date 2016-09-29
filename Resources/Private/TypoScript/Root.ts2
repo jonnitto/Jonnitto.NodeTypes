@@ -1,5 +1,5 @@
-namespace: NT=Jonnitto.NodeTypes
-namespace: TS=TYPO3.TypoScript
+namespace: Fusion = TYPO3.TypoScript
+namespace: NT = Jonnitto.NodeTypes
 
 include: Prototypes/**/*.ts2
 include: NodeTypes/**/*.ts2

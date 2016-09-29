@@ -1,4 +1,4 @@
-prototype(NT:Filesize) < prototype(TS:Value){
+prototype(NT:Filesize) < prototype(Fusion:Value){
 	filesize = ${asset.resource.filesize}
 
 	factor = 1024

@@ -1,9 +1,9 @@
-prototype(NT:LinkAttributes) < prototype(TS:Attributes) {
+prototype(NT:LinkAttributes) < prototype(Fusion:Attributes) {
 	@context.property = 'link'
 	rel = NT:LinRel
 	target = NT:LinkTarget
 	href = NT:LinkURI
-	class = TS:RawArray {
+	class = Fusion:RawArray {
 		link = NT:LinkClass
 	}
 }

@@ -29,11 +29,11 @@ prototype(NT:Image) < prototype(NT:Content) {
 			maximumHeight = ${containerFluid ? this.bleedHeight : this.maximumHeight}
 		}
 	}
-	content = TS:Array {
-		image = TS:Case {
+	content = Fusion:Array {
+		image = Fusion:Case {
 			hasLink {
 				condition = ${q(node).property('link')}
-				renderer = TS:Tag {
+				renderer = Fusion:Tag {
 					tagName = ${inlineTag}
 					attributes = NT:LinkAttributes {
 						style =  NT:ImageMaxWidthValue
@@ -43,7 +43,7 @@ prototype(NT:Image) < prototype(NT:Content) {
 			}
 			hasLightbox {
 				condition = ${q(node).property('lightbox')}
-				renderer = TS:Tag {
+				renderer = Fusion:Tag {
 					tagName = ${node.context.inBackend ? 'div' : 'a'}
 					attributes = NT:LightboxAttributes {
 						style =  NT:ImageMaxWidthValue
@@ -53,7 +53,7 @@ prototype(NT:Image) < prototype(NT:Content) {
 			}
 			hasMaxWidth {
 				condition = ${q(node).property('maximumWidth')}
-				renderer = TS:Tag {
+				renderer = Fusion:Tag {
 					attributes.style =  NT:ImageMaxWidthValue
 					content = NT:Plainimage
 				}

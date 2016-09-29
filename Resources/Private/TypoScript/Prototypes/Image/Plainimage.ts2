@@ -1,4 +1,4 @@
-prototype(NT:Plainimage) < prototype(TS:Value) {
+prototype(NT:Plainimage) < prototype(Fusion:Value) {
 	property = ${property ? property : 'image'}
 	title = ${title ? title : 'title'}
 	alternativeText = ${alternativeText ? alternativeText : 'alternativeText'}
@@ -27,9 +27,9 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 		additionalClass = ${this.additionalClass}
 	}
 
-	value = TS:Tag {
-		ratio = TS:Case {
-			roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 10)}
+	value = Fusion:Tag {
+		ratio = Fusion:Case {
+			roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 50)}
 			@context {
 				width = ${Math.ceil(asset.width / this.roundValue)}
 				height = ${Math.ceil(asset.height / this.roundValue)}
@@ -56,8 +56,8 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 
 		@ignoreProperties = ${['ratio']}
 		tagName = 'img'
-		attributes = TS:Attributes {
-			class = TS:RawArray {
+		attributes = Fusion:Attributes {
+			class = Fusion:RawArray {
 				type = ${dummyImage? 'neos-handle' : 'img-plain'}
 				ratio = ${'img-' + ratio}
 				ratio.@if.checkRatio = ${checkRatio}
@@ -69,7 +69,7 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 			}
 			title = ${titleText}
 			alt = ${altText}
-			src = TS:Case {
+			src = Fusion:Case {
 				hasImage {
 					condition = ${asset}
 					renderer = ImageUri {
@@ -82,13 +82,13 @@ prototype(NT:Plainimage) < prototype(TS:Value) {
 				}
 				inEditMode {
 					condition = true
-					renderer = TS:ResourceUri {
+					renderer = Fusion:ResourceUri {
 						package = 'TYPO3.Neos'
 						path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
 					}
 				}
 			}
-			srcset = TS:Array {
+			srcset = Fusion:Array {
 				1 = ImageUri {
 					asset = ${asset}
 					maximumWidth = ${maximumWidth}

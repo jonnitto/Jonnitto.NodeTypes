@@ -1,4 +1,4 @@
-prototype(NT:LinkTagName) < prototype(TS:Value) {
+prototype(NT:LinkTagName) < prototype(Fusion:Value) {
 	property = 'link'
 	linkTagName = 'a'
 	defaultTagName = 'div'

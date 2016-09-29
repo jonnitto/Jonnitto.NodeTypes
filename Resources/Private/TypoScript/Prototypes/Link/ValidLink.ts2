@@ -1,9 +1,9 @@
 # Check if the Link is valid and possible (Hidden parent Pages)
-prototype(NT:ValidLink) < prototype(TS:Value) {
+prototype(NT:ValidLink) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 	@context.read = ${q(node).property(this.property)}
 
-	value = TS:Case {
+	value = Fusion:Case {
 		@context.linkType = NT:LinkType {
 			read = ${read}
 		}

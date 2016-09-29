@@ -1,4 +1,4 @@
-prototype(NT:LinkTarget) < prototype(TS:Value) {
+prototype(NT:LinkTarget) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 	target = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
 
@@ -7,7 +7,7 @@ prototype(NT:LinkTarget) < prototype(TS:Value) {
 		target = ${this.target}
 	}
 
-	value = TS:Case {
+	value = Fusion:Case {
 		@context.linkType = NT:LinkType {
 			read = ${read}
 		}

@@ -1,4 +1,4 @@
-prototype(NT:ImageMaxWidthValue) < prototype(TS:Value) {
+prototype(NT:ImageMaxWidthValue) < prototype(Fusion:Value) {
 	@context.property = ${this.property}
 	property = 'maximumWidth'
 

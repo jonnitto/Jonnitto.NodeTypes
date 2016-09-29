@@ -1,4 +1,4 @@
-prototype(NT:NodeTypeName) < prototype(TS:Value) {
+prototype(NT:NodeTypeName) < prototype(Fusion:Value) {
 	node = ${node}
 	value = ${String.toLowerCase(String.pregReplace(q(this.node).property('_nodeType.name'), '/[[:^alnum:]]/', '-'))}
 }

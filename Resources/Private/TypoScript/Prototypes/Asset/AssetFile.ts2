@@ -1,11 +1,11 @@
-prototype(NT:AssetFile) < prototype(TS:Tag) {
+prototype(NT:AssetFile) < prototype(Fusion:Tag) {
 	tagName = 'a'
 	attributes {
-		class = TS:RawArray {
+		class = Fusion:RawArray {
 			fileextension = ${'asset-type-' + asset.resource.fileextension}
 			type = ${'asset-item-' + (thumbnail ? 'thumbnail' : 'text')}
 		}
-		target = TS:Case {
+		target = Fusion:Case {
 			isForceDownload {
 				condition = ${forceDownload}
 				renderer = false
@@ -19,11 +19,11 @@ prototype(NT:AssetFile) < prototype(TS:Tag) {
 				renderer = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
 			}
 		}
-		href = TS:Case {
+		href = Fusion:Case {
 			@if.islive = ${node.context.live}
 			forceDownload {
 				condition = ${forceDownload}
-				renderer = TS:UriBuilder {
+				renderer = Fusion:UriBuilder {
 					package = 'Jonnitto.NodeTypes'
 					controller = 'Download'
 					action = 'download'
@@ -34,7 +34,7 @@ prototype(NT:AssetFile) < prototype(TS:Tag) {
 			}
 			default {
 				condition = true
-				renderer = TS:ResourceUri {
+				renderer = Fusion:ResourceUri {
 					resource = ${asset.resource}
 				}
 			}

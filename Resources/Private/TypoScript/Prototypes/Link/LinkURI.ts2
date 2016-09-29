@@ -1,7 +1,7 @@
-prototype(NT:LinkURI) < prototype(TS:Value) {
+prototype(NT:LinkURI) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 	@context.read = ${q(node).property(this.property)}
-	value = TS:Case {
+	value = Fusion:Case {
 		@context.linkType = NT:LinkType {
 			read = ${read}
 		}

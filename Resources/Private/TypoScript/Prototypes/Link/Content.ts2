@@ -1,9 +1,9 @@
-prototype(NT:LinkContent) < prototype(TS:Value) {
+prototype(NT:LinkContent) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 
 	@context.read = ${q(node).property(this.property)}
 
-	value = TS:Case {
+	value = Fusion:Case {
 		@context.linkType = NT:LinkType {
 			read = ${read}
 		}
@@ -15,7 +15,7 @@ prototype(NT:LinkContent) < prototype(TS:Value) {
 		}
 		isNode {
 			condition = ${linkType == 'node'}
-			renderer = TS:Value {
+			renderer = Fusion:Value {
 				node = ${Neos.Link.convertUriToObject(read, documentNode)}
 				value = ${q(this.node).property('title')}
 			}

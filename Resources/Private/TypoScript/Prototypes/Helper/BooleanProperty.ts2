@@ -1,4 +1,4 @@
-prototype(NT:BooleanProperty) < prototype(TS:Value) {
+prototype(NT:BooleanProperty) < prototype(Fusion:Value) {
 	property = NULL
 
 	prepend = ''

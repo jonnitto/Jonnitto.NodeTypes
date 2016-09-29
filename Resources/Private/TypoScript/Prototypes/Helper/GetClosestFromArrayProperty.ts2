@@ -1,4 +1,4 @@
-prototype(NT:GetClosestFromArrayProperty) < prototype(TS:Case) {
+prototype(NT:GetClosestFromArrayProperty) < prototype(Fusion:Case) {
 	property = 'property'
 	allNodes = ${q(node).add(q(node).parents()).get()}
 	array = ${Neos.Array.filter(this.allNodes, 'properties.' + this.property)}

@@ -1,4 +1,4 @@
-prototype(NT:LinkClass) < prototype(TS:Value) {
+prototype(NT:LinkClass) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 	prepend = ${this.property}
 	divider = '-'

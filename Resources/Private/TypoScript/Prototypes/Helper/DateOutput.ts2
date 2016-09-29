@@ -1,4 +1,4 @@
-prototype(NT:DateOutput) < prototype(TS:Template){
+prototype(NT:DateOutput) < prototype(Fusion:Template){
 	templatePath = ${'resource://Jonnitto.NodeTypes/Private/Templates/TypoScriptObjects/DateOutput.html'}
 	locale = ${node.context.targetDimensions.language}
 	date = ${date}

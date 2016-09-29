@@ -1,4 +1,4 @@
-prototype(NT:HiddenParents) < prototype(TS:Value) {
+prototype(NT:HiddenParents) < prototype(Fusion:Value) {
 	item = ${node}
 	visibleCount = ${q(this.item).parents().count()}
 	invisibleCount = ${q(this.item).context({'invisibleContentShown': true}).parents().count()}

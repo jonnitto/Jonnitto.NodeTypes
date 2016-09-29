@@ -1,4 +1,4 @@
-prototype(NT:LinkType) < prototype(TS:Case) {
+prototype(NT:LinkType) < prototype(Fusion:Case) {
 	property = ${property ? property : 'link'}
 	read = ${q(node).property(this.property)}
 

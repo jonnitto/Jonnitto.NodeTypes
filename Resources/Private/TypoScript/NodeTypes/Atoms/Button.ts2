@@ -3,7 +3,7 @@ prototype(NT:Button) < prototype(NT:InlineEditableLink) {
 	attributes.class {
 		container >
 		btn = ${config.Button.defaultClassName}
-		style = TS:Array {
+		style = Fusion:Array {
 			tagStyle = NT:PropertyFromConfigIfNotSet {
 				property = 'tagStyle'
 				configuration = 'Button.defaultStyle'

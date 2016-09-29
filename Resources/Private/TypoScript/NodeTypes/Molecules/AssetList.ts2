@@ -15,15 +15,15 @@ prototype(NT:AssetList) < prototype(NT:Content) {
 		thumbnail = ${'assets-list-' + (thumbnail ? 'thumbnail' : 'text')}
 	}
 
-	content = TS:Case {
+	content = Fusion:Case {
 		hasAssets {
 			condition = ${assets ? true : false}
 			renderer = NT:AssetCollection
 		}
 		default {
 			condition = true
-			renderer = TS:Tag {
-				attributes.style = TS:Array {
+			renderer = Fusion:Tag {
+				attributes.style = Fusion:Array {
 					default = ${config.Notification.style}
 					type = ${config.Notification.warning}
 				}

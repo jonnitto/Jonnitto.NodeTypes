@@ -1,4 +1,4 @@
-prototype(NT:WrapIfPropertyIsSet) < prototype(TS:Value) {
+prototype(NT:WrapIfPropertyIsSet) < prototype(Fusion:Value) {
 	property = NULL
 	append = ''
 	divider = '-'

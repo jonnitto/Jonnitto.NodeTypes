@@ -1,7 +1,7 @@
-prototype(NT:AssetFileName) < prototype(TS:Array) {
-	thumbnail = TS:Tag {
+prototype(NT:AssetFileName) < prototype(Fusion:Array) {
+	thumbnail = Fusion:Tag {
 		tagName = 'figure'
-		attributes.class = TS:RawArray {
+		attributes.class = Fusion:RawArray {
 			thumb = 'asset-thumbnail'
 		}
 		content = NT:Plainimage {
@@ -14,19 +14,19 @@ prototype(NT:AssetFileName) < prototype(TS:Array) {
 		@if.active = ${thumbnail ? true : false}
 	}
 
-	text = TS:Tag {
+	text = Fusion:Tag {
 		tagName = 'span'
-		attributes.class = TS:RawArray {
+		attributes.class = Fusion:RawArray {
 			text = 'asset-text'
 		}
-		content = TS:Array {
-			file = TS:Tag {
+		content = Fusion:Array {
+			file = Fusion:Tag {
 				tagName = 'span'
-				attributes.class = TS:RawArray {
+				attributes.class = Fusion:RawArray {
 					text = 'asset-text-file'
 				}
-				content = TS:Array {
-					title = TS:Case {
+				content = Fusion:Array {
+					title = Fusion:Case {
 						hasTitle {
 							condition = ${asset.title}
 							renderer = ${asset.title}
@@ -41,9 +41,9 @@ prototype(NT:AssetFileName) < prototype(TS:Array) {
 				}
 			}
 			divider = ' '
-			info = TS:Tag {
+			info = Fusion:Tag {
 				tagName = 'small'
-				content = TS:Array {
+				content = Fusion:Array {
 					fileextension = ${asset.resource.fileextension}
 					divider = ', '
 					filesize = NT:Filesize

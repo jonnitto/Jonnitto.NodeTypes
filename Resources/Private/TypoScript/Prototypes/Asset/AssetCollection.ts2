@@ -1,4 +1,4 @@
-prototype(NT:AssetCollection) < prototype(TS:Collection) {
+prototype(NT:AssetCollection) < prototype(Fusion:Collection) {
 	collection = ${assets}
 	itemName = 'asset'
 	iterationName = 'iterator'

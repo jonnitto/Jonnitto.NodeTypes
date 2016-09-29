@@ -3,7 +3,7 @@ prototype(NT:InlineEditable) < prototype(NT:Content) {
 	property = 'text'
 	inlineTag = 'span'
 
-	content = TS:Tag {
+	content = Fusion:Tag {
 		tagName = ${inlineTag}
 		content = ${q(node).property(property)}
 		@process.contentElementEditable = ContentElementEditable

@@ -1,4 +1,4 @@
-prototype(NT:LinRel) < prototype(TS:Value) {
+prototype(NT:LinRel) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 	rel = 'noopener'
 
@@ -7,7 +7,7 @@ prototype(NT:LinRel) < prototype(TS:Value) {
 		rel = ${this.rel}
 	}
 
-	value = TS:Case {
+	value = Fusion:Case {
 		@context.linkType = NT:LinkType {
 			read = ${read}
 		}

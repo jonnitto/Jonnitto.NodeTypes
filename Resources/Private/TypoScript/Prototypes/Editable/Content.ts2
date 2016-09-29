@@ -1,4 +1,4 @@
-prototype(NT:Content) < prototype(TS:Tag) {
+prototype(NT:Content) < prototype(Fusion:Tag) {
 	@context {
 		property = ${this.property}
 		config = ${this.config}
@@ -20,10 +20,10 @@ prototype(NT:Content) < prototype(TS:Tag) {
 	isOnDocument = ${q(node).parent().parent().is(this.config.instanceOfDocument)}
 	config = ${Configuration.setting('Jonnitto.NodeTypes')}
 
-	attributes.class = TS:RawArray {
+	attributes.class = Fusion:RawArray {
 		nodeType = ${isContentElement ? nodeTypeName : false}
 		# Is parent a document => add container class
-		container = TS:Value {
+		container = Fusion:Value {
 			value = ${containerFluid ? config.containerFluid : config.container}
 			@if.isOnDocumentAndContentElement = ${isOnDocument && isContentElement}
 		}

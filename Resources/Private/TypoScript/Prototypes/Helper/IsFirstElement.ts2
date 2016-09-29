@@ -1,4 +1,4 @@
-prototype(NT:IsFirstElement) < prototype(TS:Value) {
+prototype(NT:IsFirstElement) < prototype(Fusion:Value) {
 	true = true
 	false = false
 	node = ${node}

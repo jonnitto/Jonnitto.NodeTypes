@@ -1,10 +1,10 @@
 prototype(NT:Notification) < prototype(NT:InlineEditable) {
 	isContentElement = true
-	attributes.style = TS:Array {
+	attributes.style = Fusion:Array {
 		default = ${config.Notification.style}
 		type = ${config.Notification[q(node).property('type')]}
 	}
-	@if.render = TS:Case {
+	@if.render = Fusion:Case {
 		inBackend {
 			condition = ${node.context.inBackend}
 			renderer = true
