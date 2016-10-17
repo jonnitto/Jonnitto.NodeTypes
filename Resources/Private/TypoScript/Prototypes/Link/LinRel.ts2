@@ -24,9 +24,13 @@ prototype(NT:LinRel) < prototype(Fusion:Value) {
 			condition = ${linkType == 'hash'}
 			renderer = false
 		}
+		isExternal {
+			condition = ${linkType == 'external'}
+			renderer = ${rel}
+		}
 		default {
 			condition = true
-			renderer = ${rel}
+			renderer = false
 		}
 	}
 }
