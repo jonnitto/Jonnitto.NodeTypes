@@ -16,7 +16,7 @@ prototype(NT:AssetFile) < prototype(Fusion:Tag) {
 			}
 			default {
 				condition = true
-				renderer = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
+				renderer = ${configJonnittoNodeTypes.externalTarget}
 			}
 		}
 		href = Fusion:Case {

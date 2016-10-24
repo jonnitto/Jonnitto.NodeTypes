@@ -6,7 +6,7 @@ prototype(NT:AssetFileName) < prototype(Fusion:Array) {
 		}
 		content = NT:Plainimage {
 			asset = ${asset}
-			maximumWidth = ${Configuration.setting('Jonnitto.NodeTypes.assetlist.thumbnail.width')}
+			maximumWidth = ${configJonnittoNodeTypes.assetlist.thumbnail.width}
 			checkRatio = false
 			additionalClass = 'img-asset-thumbnail'
 		}

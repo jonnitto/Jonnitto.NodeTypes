@@ -1,5 +1,10 @@
 namespace: Fusion = TYPO3.TypoScript
 namespace: NT = Jonnitto.NodeTypes
 
+// Make these variables everywhere available
+root.@context {
+	configJonnittoNodeTypes = ${Configuration.setting('Jonnitto.NodeTypes')}
+}
+
 include: Prototypes/**/*.ts2
 include: NodeTypes/**/*.ts2

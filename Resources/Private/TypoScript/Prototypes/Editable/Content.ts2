@@ -1,13 +1,13 @@
 prototype(NT:Content) < prototype(Fusion:Tag) {
 	@context {
 		property = ${this.property}
-		config = ${this.config}
 		inlineTag = ${this.inlineTag}
 		nodeTypeName = NT:NodeTypeName
 		isContentElement = ${this.isContentElement}
 		containerFluid = ${this.containerFluid}
 		isOnDocument = ${this.isOnDocument}
 		isFirstElement = ${this.isFirstElement}
+		config = ${configJonnittoNodeTypes}
 	}
 
 	property = NULL
@@ -17,8 +17,7 @@ prototype(NT:Content) < prototype(Fusion:Tag) {
 	isFirstElement = NT:IsFirstElement
 	isFirstElement.@if.isContentElement = ${this.isContentElement}
 
-	isOnDocument = ${q(node).parent().parent().is(this.config.instanceOfDocument)}
-	config = ${Configuration.setting('Jonnitto.NodeTypes')}
+	isOnDocument = ${q(node).parent().parent().is(configJonnittoNodeTypes.instanceOfDocument)}
 
 	attributes.class = Fusion:RawArray {
 		nodeType = ${isContentElement ? nodeTypeName : false}
