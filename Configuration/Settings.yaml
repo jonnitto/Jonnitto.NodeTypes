@@ -40,6 +40,7 @@ Jonnitto:
     container: false
     containerFluid: false
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
+    prependIdentifier: id-
     externalTarget: _blank
     assetlist:
       thumbnail:

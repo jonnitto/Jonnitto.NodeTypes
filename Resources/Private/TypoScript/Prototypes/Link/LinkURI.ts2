@@ -8,13 +8,15 @@ prototype(NT:LinkURI) < prototype(Fusion:Value) {
 		isNode {
 			condition = ${linkType == 'node'}
 			renderer = NodeUri {
-				node = ${Neos.Link.convertUriToObject(read, node)}
+				@context.nodeObject = ${Neos.Link.convertUriToObject(read, node)}
+				node = ${q(nodeObject).closest(configJonnittoNodeTypes.instanceOfDocument).get(0)}
+				section = ${q(nodeObject).is(configJonnittoNodeTypes.instanceOfDocument) ? false : configJonnittoNodeTypes.prependIdentifier + nodeObject.identifier}
 			}
 		}
 		isAssetOrExternal {
 			condition = ${read}
 			renderer = ${read}
-			renderer.@process.convertUris = TYPO3.Neos:ConvertUris
+			renderer.@process.convertUris = ConvertUris
 		}
 		noLink {
 			condition = true
