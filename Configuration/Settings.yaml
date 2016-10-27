@@ -42,6 +42,7 @@ Jonnitto:
     instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
     prependIdentifier: id-
     externalTarget: _blank
+    assetExternal: 'image,pdf'
     assetlist:
       thumbnail:
         width: 200

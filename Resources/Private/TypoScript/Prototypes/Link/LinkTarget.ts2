@@ -1,10 +1,12 @@
 prototype(NT:LinkTarget) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
 	target = ${configJonnittoNodeTypes.externalTarget}
+	assetExternal = ${String.toLowerCase(configJonnittoNodeTypes.assetExternal)}
 
 	@context {
 		read = ${q(node).property(this.property)}
 		target = ${this.target}
+		assetExternal = ${this.assetExternal}
 	}
 
 	value = Fusion:Case {
@@ -13,7 +15,11 @@ prototype(NT:LinkTarget) < prototype(Fusion:Value) {
 		}
 		isAsset {
 			condition = ${linkType == 'asset'}
-			renderer = ${target}
+			renderer = Fusion:Value {
+				mediatype = ${String.toLowerCase(Neos.Link.convertUriToObject(read).resource.mediatype)}
+				regex = ${'(' + String.replace(assetExternal, ',', '|') + ')'}
+				value = ${String.pregMatch(this.mediatype, this.regex)[0] ? target : false}
+			}
 		}
 		isExternal {
 			condition = ${linkType == 'external'}
