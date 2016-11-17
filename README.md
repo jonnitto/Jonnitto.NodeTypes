@@ -30,6 +30,12 @@ Molecules
 * Image
 
 
+Credits
+-------
+
+Credits go out to [dotpulse](http://dotpulse.ch) and [Dmitri Pisarev](https://github.com/dimaip). Thank you for all the inspiration and investment.
+
+
 License
 -------
 The MIT License (MIT)
