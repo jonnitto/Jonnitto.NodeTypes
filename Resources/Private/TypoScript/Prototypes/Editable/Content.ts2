@@ -7,7 +7,6 @@ prototype(NT:Content) < prototype(Fusion:Tag) {
 		containerFluid = ${this.containerFluid}
 		isOnDocument = ${this.isOnDocument}
 		isFirstElement = ${this.isFirstElement}
-		config = ${configJonnittoNodeTypes}
 	}
 
 	property = NULL
@@ -23,7 +22,7 @@ prototype(NT:Content) < prototype(Fusion:Tag) {
 		nodeType = ${isContentElement ? nodeTypeName : false}
 		# Is parent a document => add container class
 		container = Fusion:Value {
-			value = ${containerFluid ? config.containerFluid : config.container}
+			value = ${containerFluid ? configJonnittoNodeTypes.containerFluid : configJonnittoNodeTypes.container}
 			@if.isOnDocumentAndContentElement = ${isOnDocument && isContentElement}
 		}
 	}

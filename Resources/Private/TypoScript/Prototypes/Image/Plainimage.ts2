@@ -10,7 +10,7 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 		property = 'maximumWidth'
 		configuration = 'Image.maximumWidth'
 	}
-	maximumHeight = ${config.Image.maximumHeight}
+	maximumHeight = ${configJonnittoNodeTypes.Image.maximumHeight}
 	allowCropping = false
 	allowUpScaling = false
 

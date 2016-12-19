@@ -1,8 +1,8 @@
 prototype(NT:Notification) < prototype(NT:InlineEditable) {
 	isContentElement = true
 	attributes.style = Fusion:Array {
-		default = ${config.Notification.style}
-		type = ${config.Notification[q(node).property('type')]}
+		default = ${configJonnittoNodeTypes.Notification.style}
+		type = ${configJonnittoNodeTypes.Notification[q(node).property('type')]}
 	}
 	@if.render = Fusion:Case {
 		inBackend {
