@@ -1,0 +1,5 @@
+prototype(NT:FileContent) < prototype(Fusion:Value) {
+	@class = 'Jonnitto\\NodeTypes\\TypoScript\\FileContentImplementation'
+	path = null
+	resource = null
+}

@@ -27,98 +27,109 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 		additionalClass = ${this.additionalClass}
 	}
 
-	value = Fusion:Tag {
-		ratio = Fusion:Case {
-			roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 50)}
-			@context {
-				width = ${Math.ceil(asset.width / this.roundValue)}
-				height = ${Math.ceil(asset.height / this.roundValue)}
-			}
-			@ignoreProperties = ${['roundValue']}
-
-			isSquare {
-				condition = ${width == height}
-				renderer = ${'square'}
-			}
-			isLandscape {
-				condition = ${width > height}
-				renderer = 'landscape'
-			}
-			isPortrait {
-				condition = ${width < height}
-				renderer = 'portrait'
+	value = Fusion:Case {
+		isInlineSVG {
+			condition = ${(asset && configJonnittoNodeTypes.Image.inlineSVG && asset.resource.fileextension) ? true : false}
+			renderer = NT:FileContent {
+				resource = ${asset.resource}
 			}
 		}
-		@context {
-			dummyImage = ${node.context.inBackend && !asset}
-			ratio = ${this.ratio}
-		}
+		default {
+			condition = true
+			renderer = Fusion:Tag {
+				ratio = Fusion:Case {
+					roundValue = ${Math.min(Math.max(Math.round(asset.width / 25), 1), 50)}
+					@context {
+						width = ${Math.ceil(asset.width / this.roundValue)}
+						height = ${Math.ceil(asset.height / this.roundValue)}
+					}
+					@ignoreProperties = ${['roundValue']}
 
-		@ignoreProperties = ${['ratio']}
-		tagName = 'img'
-		attributes = Fusion:Attributes {
-			class = Fusion:RawArray {
-				type = ${dummyImage? 'neos-handle' : 'img-plain'}
-				ratio = ${'img-' + ratio}
-				ratio.@if.checkRatio = ${checkRatio}
-				additionalClass = ${additionalClass}
-				alignment = NT:WrapIfPropertyIsSet {
-					property = 'alignment'
-					prepend = 'img-'
-				}
-			}
-			title = ${titleText}
-			alt = ${altText}
-			src = Fusion:Case {
-				hasImage {
-					condition = ${asset}
-					renderer = ImageUri {
-						asset = ${asset}
-						maximumWidth = ${maximumWidth}
-						maximumHeight = ${maximumHeight}
-						allowCropping = ${allowCropping}
-						allowUpScaling = ${allowUpScaling}
+					isSquare {
+						condition = ${width == height}
+						renderer = ${'square'}
+					}
+					isLandscape {
+						condition = ${width > height}
+						renderer = 'landscape'
+					}
+					isPortrait {
+						condition = ${width < height}
+						renderer = 'portrait'
 					}
 				}
-				inEditMode {
-					condition = true
-					renderer = Fusion:ResourceUri {
-						package = 'TYPO3.Neos'
-						path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+				@context {
+					dummyImage = ${node.context.inBackend && !asset}
+					ratio = ${this.ratio}
+				}
+
+				@ignoreProperties = ${['ratio']}
+
+				tagName = 'img'
+				attributes = Fusion:Attributes {
+					class = Fusion:RawArray {
+						type = ${dummyImage? 'neos-handle' : 'img-plain'}
+						ratio = ${'img-' + ratio}
+						ratio.@if.checkRatio = ${checkRatio}
+						additionalClass = ${additionalClass}
+						alignment = NT:WrapIfPropertyIsSet {
+							property = 'alignment'
+							prepend = 'img-'
+						}
+					}
+					title = ${titleText}
+					alt = ${altText}
+					src = Fusion:Case {
+						hasImage {
+							condition = ${asset}
+							renderer = ImageUri {
+								asset = ${asset}
+								maximumWidth = ${maximumWidth}
+								maximumHeight = ${maximumHeight}
+								allowCropping = ${allowCropping}
+								allowUpScaling = ${allowUpScaling}
+							}
+						}
+						inEditMode {
+							condition = true
+							renderer = Fusion:ResourceUri {
+								package = 'TYPO3.Neos'
+								path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+							}
+						}
+					}
+					srcset = Fusion:Array {
+						1 = ImageUri {
+							asset = ${asset}
+							maximumWidth = ${maximumWidth}
+							maximumHeight = ${maximumHeight}
+							allowCropping = ${allowCropping}
+							allowUpScaling = ${allowUpScaling}
+							@process.addResolution = ${value + ' 1x'}
+						}
+						2 = ImageUri {
+							asset = ${asset}
+							maximumWidth = ${maximumWidth * 2}
+							maximumHeight = ${maximumHeight * 2}
+							allowCropping = ${allowCropping}
+							allowUpScaling = ${allowUpScaling}
+							@process.addResolution = ${',' + value + ' 2x'}
+							@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
+						}
+						3 = ImageUri {
+							asset = ${asset}
+							maximumWidth = ${maximumWidth * 3}
+							maximumHeight = ${maximumHeight * 3}
+							allowCropping = ${allowCropping}
+							allowUpScaling = ${allowUpScaling}
+							@process.addResolution = ${',' + value + ' 3x'}
+							@if.hasEnoughPixel = ${asset.width >= maximumWidth * 3 && asset.height >= maximumHeight * 3}
+						}
+						@if.hasAsset = ${asset}
 					}
 				}
 			}
-			srcset = Fusion:Array {
-				1 = ImageUri {
-					asset = ${asset}
-					maximumWidth = ${maximumWidth}
-					maximumHeight = ${maximumHeight}
-					allowCropping = ${allowCropping}
-					allowUpScaling = ${allowUpScaling}
-					@process.addResolution = ${value + ' 1x'}
-				}
-				2 = ImageUri {
-					asset = ${asset}
-					maximumWidth = ${maximumWidth * 2}
-					maximumHeight = ${maximumHeight * 2}
-					allowCropping = ${allowCropping}
-					allowUpScaling = ${allowUpScaling}
-					@process.addResolution = ${',' + value + ' 2x'}
-					@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
-				}
-				3 = ImageUri {
-					asset = ${asset}
-					maximumWidth = ${maximumWidth * 3}
-					maximumHeight = ${maximumHeight * 3}
-					allowCropping = ${allowCropping}
-					allowUpScaling = ${allowUpScaling}
-					@process.addResolution = ${',' + value + ' 3x'}
-					@if.hasEnoughPixel = ${asset.width >= maximumWidth * 3 && asset.height >= maximumHeight * 3}
-				}
-				@if.hasAsset = ${asset}
-			}
 		}
-
 	}
 
 	@if.render = NT:NeededProperties {

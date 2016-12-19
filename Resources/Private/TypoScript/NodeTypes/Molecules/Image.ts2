@@ -15,6 +15,7 @@ prototype(NT:Image) < prototype(NT:Content) {
 			prepend = 'image-'
 		}
 		isFirstElement = ${isFirstElement ? 'image-first' : false}
+		filetype = ${'image-type-' + q(node).property(property).resource.fileextension}
 	}
 
 	prototype(NT:Plainimage) {

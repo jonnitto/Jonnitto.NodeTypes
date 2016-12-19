@@ -24,6 +24,7 @@ Jonnitto:
       defaultStyle: secondary
       groupClassName: btn-group
     Image:
+      inlineSVG: true
       maximumWidth: 1440
       maximumHeight: 1280
       bleedWidth: 1920
