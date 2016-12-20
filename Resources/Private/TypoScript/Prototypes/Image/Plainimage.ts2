@@ -29,7 +29,7 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 
 	value = Fusion:Case {
 		isInlineSVG {
-			condition = ${(asset && configJonnittoNodeTypes.Image.inlineSVG && asset.resource.fileextension) ? true : false}
+			condition = ${(asset && configJonnittoNodeTypes.Image.inlineSVG && asset.resource.fileextension == 'svg') ? true : false}
 			renderer = NT:FileContent {
 				resource = ${asset.resource}
 			}
