@@ -30,10 +30,9 @@ class FileContentImplementation extends AbstractTypoScriptObject
     }
 
     /**
-     * Returns the file content of a resource
+     * Returns the file content of a resource. Fails silent
      *
-     * @return string
-     * @throws TypoScriptException
+     * @return string | boolean
      */
     public function evaluate()
     {
@@ -51,5 +50,3 @@ class FileContentImplementation extends AbstractTypoScriptObject
         return false;
     }
 }
-
-//Utility\Files::getFileContents('resource://Blaser.Elements/Resources/Public/Assets/Logo.svg');
