@@ -1,7 +1,5 @@
 prototype(NT:Content) < prototype(Fusion:Tag) {
 	@context {
-		property = ${this.property}
-		inlineTag = ${this.inlineTag}
 		nodeTypeName = NT:NodeTypeName
 		isContentElement = ${this.isContentElement}
 		containerFluid = ${this.containerFluid}
@@ -9,7 +7,6 @@ prototype(NT:Content) < prototype(Fusion:Tag) {
 		isFirstElement = ${this.isFirstElement}
 	}
 
-	property = NULL
 	tagName = 'div'
 	isContentElement = false
 	containerFluid = false

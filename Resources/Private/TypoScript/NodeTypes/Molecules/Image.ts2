@@ -7,6 +7,8 @@ prototype(NT:Image) < prototype(NT:Content) {
 
 	@context {
 		asset = ${q(node).property(this.property)}
+		property = ${this.property}
+		inlineTag = ${this.inlineTag}
 	}
 
 	attributes.class {
@@ -64,9 +66,12 @@ prototype(NT:Image) < prototype(NT:Content) {
 				renderer = NT:Plainimage
 			}
 		}
-		caption = NT:InlineEditable {
+		caption = NT:InlineEditableTag {
+			@process.wrap = Fusion:Tag {
+				tagName = 'figcaption'
+				content = ${value}
+			}
 			property = 'caption'
-			tagName = 'figcaption'
 			@if.render = ${q(node).property('hasCaption') && (q(node).property('caption') || node.context.inBackend) ? true : false}
 		}
 	}

@@ -1,6 +1,14 @@
-prototype(NT:InlineEditableTag) < prototype(NT:InlineEditable) {
-	inlineTag = NT:LinkTagName {
+prototype(NT:InlineEditableTag) < prototype(Fusion:Tag) {
+	property = 'text'
+	@context.property = ${this.property}
+
+	tagName = NT:LinkTagName {
 		defaultTagName = 'span'
 	}
-	content.attributes = NT:LinkAttributes
+	attributes = NT:LinkAttributes
+	content = ${q(node).property(property)}
+
+	@process.contentElementEditable = ContentElementEditable
+	@process.contentElementEditable.property = ${property}
+	@if.render = NT:NeededProperties
 }

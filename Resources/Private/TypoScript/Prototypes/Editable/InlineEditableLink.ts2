@@ -1,5 +1,13 @@
-prototype(NT:InlineEditableLink) < prototype(NT:InlineEditable) {
+prototype(NT:InlineEditableLink) < prototype(NT:Content) {
 	tagName = NT:LinkTagName
 	attributes = NT:LinkAttributes
+	property = 'text'
+	@context.property = ${this.property}
+
+	content = NT:InlineEditableTag {
+		property = ${property}
+		tagName = 'span'
+		attributes >
+	}
 	@if.render.check = ${q(node).property('link') && q(node).property('text')}
 }
