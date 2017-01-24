@@ -1,4 +1,4 @@
-prototype(NT:Notification) < prototype(NT:InlineEditable) {
+prototype(NT:Notification) < prototype(NT:InlineEditableContentWrap) {
 	isContentElement = true
 	attributes.style = Fusion:Array {
 		default = ${configJonnittoNodeTypes.Notification.style}

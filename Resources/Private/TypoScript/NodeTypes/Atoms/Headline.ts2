@@ -1,4 +1,4 @@
-prototype(NT:Headline) < prototype(NT:InlineEditableTag) {
+prototype(NT:Headline) < prototype(NT:InlineEditableContentWrap) {
 	@context.defaultTagName = ${this.isFirstElement ? 'firstTagName' : 'defaultTagName'}
 	property = 'title'
 	isContentElement = true

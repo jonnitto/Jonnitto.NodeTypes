@@ -1,0 +1,15 @@
+prototype(NT:InlineEditableContentWrap) < prototype(NT:Content) {
+	property = 'text'
+	@context.property = ${this.property}
+
+	inlineTag = NT:LinkTagName {
+		defaultTagName = 'span'
+	}
+	@context.inlineTag = ${this.inlineTag}
+	@context.configJonnittoNodeTypes = ${Configuration.setting('Jonnitto.NodeTypes')}
+
+	content = NT:InlineEditableTag {
+		property = ${property}
+		tagName = ${inlineTag}
+	}
+}
