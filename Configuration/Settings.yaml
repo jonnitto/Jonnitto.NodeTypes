@@ -35,9 +35,6 @@ Jonnitto:
         width: 200
 Neos:
   Neos:
-    typoScript:
-      autoInclude:
-        Jonnitto.NodeTypes: true
     userInterface:
       translation:
         autoInclude:
@@ -49,3 +46,6 @@ Neos:
           position: 400
           label: 'Jonnitto.NodeTypes:NodeTypes.Groups:special'
           collapsed: true
+    fusion:
+      autoInclude:
+        Jonnitto.NodeTypes: true
