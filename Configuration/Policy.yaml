@@ -2,10 +2,10 @@ privilegeTargets:
   'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
     'Jonnitto.NodeTypes:Frontend.Download':
       matcher: 'method(Jonnitto\NodeTypes\Controller\DownloadController->downloadAction())'
-  'TYPO3\TYPO3CR\Security\Authorization\Privilege\Node\CreateNodePrivilege':
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\CreateNodePrivilege':
     'Jonnitto.NodeTypes:BackendNotificationCreate':
       matcher: nodeIsOfType("Jonnitto.NodeTypes:BackendNotification")
-  'TYPO3\TYPO3CR\Security\Authorization\Privilege\Node\EditNodePrivilege':
+  'Neos\ContentRepository\Security\Authorization\Privilege\Node\EditNodePrivilege':
     'Jonnitto.NodeTypes:BackendNotificationEdit':
       matcher: nodeIsOfType("Jonnitto.NodeTypes:BackendNotification")
 
