@@ -1,9 +1,9 @@
 
 'Jonnitto.NodeTypes:Notification':
   superTypes:
-    'Jonnitto.NodeTypes:Content': '1'
-    'Jonnitto.NodeTypes:SettingsMixin': '1'
-    'Jonnitto.NodeTypes:PureTextMixin': '1'
+    'Jonnitto.NodeTypes:Content': true
+    'Jonnitto.NodeTypes:SettingsMixin': true
+    'Jonnitto.NodeTypes:PureTextMixin': true
   ui:
     label: i18n
     icon: icon-exclamation-triangle

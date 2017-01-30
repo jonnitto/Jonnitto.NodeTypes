@@ -2,7 +2,7 @@
 'Jonnitto.NodeTypes:Homepage':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:Page': '1'
+    'Jonnitto.NodeTypes:Page': true
   ui:
     icon: icon-globe
     label: Homepage

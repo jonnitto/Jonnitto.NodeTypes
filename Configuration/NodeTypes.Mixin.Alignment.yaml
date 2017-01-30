@@ -2,7 +2,7 @@
 'Jonnitto.NodeTypes:AlignmentMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': '1'
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     alignment:
       type: string
@@ -19,7 +19,7 @@
 'Jonnitto.NodeTypes:AlignmentLeftMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -32,7 +32,7 @@
 'Jonnitto.NodeTypes:AlignmentCenterMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -45,7 +45,7 @@
 'Jonnitto.NodeTypes:AlignmentRightMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -58,7 +58,7 @@
 'Jonnitto.NodeTypes:AlignmentFloatLeftMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -71,7 +71,7 @@
 'Jonnitto.NodeTypes:AlignmentFloatRightMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -84,7 +84,7 @@
 'Jonnitto.NodeTypes:AlignmentTopMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -97,7 +97,7 @@
 'Jonnitto.NodeTypes:AlignmentBottomMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:
@@ -110,7 +110,7 @@
 'Jonnitto.NodeTypes:AlignmentBleedMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': '1'
+    'Jonnitto.NodeTypes:AlignmentMixin': true
   properties:
     alignment:
       ui:

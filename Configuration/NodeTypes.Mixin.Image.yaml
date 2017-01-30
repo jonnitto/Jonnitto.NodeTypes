@@ -11,7 +11,7 @@
 'Jonnitto.NodeTypes:ImageMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     image:
       type: TYPO3\Media\Domain\Model\ImageInterface
@@ -24,7 +24,7 @@
 'Jonnitto.NodeTypes:ImageAlternativeTextMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     alternativeText:
       type: string
@@ -37,7 +37,7 @@
 'Jonnitto.NodeTypes:ImageTitleMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     title:
       type: string
@@ -50,7 +50,7 @@
 'Jonnitto.NodeTypes:ImageLightboxMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     lightbox:
       type: boolean
@@ -63,7 +63,7 @@
 'Jonnitto.NodeTypes:ImageCaptionMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
+    'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     hasCaption:
       type: boolean

@@ -2,7 +2,7 @@
 'Jonnitto.NodeTypes:ButtonTagStyleMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': '1'
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     tagStyle:
       type: string
@@ -26,7 +26,7 @@
 'Jonnitto.NodeTypes:ButtonOutlineMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': '1'
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     outline:
       type: boolean

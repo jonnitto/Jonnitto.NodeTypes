@@ -11,7 +11,7 @@
 'Jonnitto.NodeTypes:AssetsMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AssetsSettingsMixin': '1'
+    'Jonnitto.NodeTypes:AssetsSettingsMixin': true
   properties:
     assets:
       type: array<TYPO3\Media\Domain\Model\Asset>
@@ -23,7 +23,7 @@
 'Jonnitto.NodeTypes:ForceDownloadMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AssetsSettingsMixin': '1'
+    'Jonnitto.NodeTypes:AssetsSettingsMixin': true
   properties:
     forceDownload:
       type: boolean
@@ -34,7 +34,7 @@
 'Jonnitto.NodeTypes:ThumbnailMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AssetsSettingsMixin': '1'
+    'Jonnitto.NodeTypes:AssetsSettingsMixin': true
   properties:
     thumbnail:
       type: boolean

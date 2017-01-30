@@ -2,7 +2,7 @@
 'Jonnitto.NodeTypes:Page':
   abstract: true
   superTypes:
-    'TYPO3.Neos:Document': '1'
+    'TYPO3.Neos:Document': true
   childNodes:
     main:
       type: 'TYPO3.Neos:ContentCollection'

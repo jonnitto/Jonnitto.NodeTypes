@@ -2,7 +2,7 @@
 'Jonnitto.NodeTypes:HeadlineTagNameMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': '1'
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     tagName:
       type: string
@@ -28,7 +28,7 @@
 'Jonnitto.NodeTypes:HeadlineTagStyleMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': '1'
+    'Jonnitto.NodeTypes:SettingsMixin': true
   properties:
     tagStyle:
       type: string
