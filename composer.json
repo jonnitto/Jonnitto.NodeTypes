@@ -1,7 +1,6 @@
 {
     "name": "jonnitto/nodetypes",
-    "type": "typo3-flow-plugin",
-    "version": "0.2.0",
+    "type": "neos-plugin",
     "license": "MIT",
     "description": "Some NodeTypes for the greatest Content System on earth: Neos.io",
     "keywords": [
