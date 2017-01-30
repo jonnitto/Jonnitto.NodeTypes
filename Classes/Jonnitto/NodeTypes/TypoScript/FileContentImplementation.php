@@ -2,7 +2,7 @@
 namespace Jonnitto\NodeTypes\TypoScript;
 
 use Neos\Flow\Annotations as Flow;
-use TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject;
+use Neos\Fusion\TypoScriptObjects\AbstractTypoScriptObject;
 use Neos\Flow\Utility;
 
 
