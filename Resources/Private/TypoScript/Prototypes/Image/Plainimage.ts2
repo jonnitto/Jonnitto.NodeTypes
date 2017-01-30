@@ -93,8 +93,8 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 						inEditMode {
 							condition = true
 							renderer = Fusion:ResourceUri {
-								package = 'TYPO3.Neos'
-								path = 'resource://TYPO3.Neos/Public/Images/dummy-image.svg'
+								package = 'Neos.Neos'
+								path = 'resource://Neos.Neos/Public/Images/dummy-image.svg'
 							}
 						}
 					}
