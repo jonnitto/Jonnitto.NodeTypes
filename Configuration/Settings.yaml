@@ -1,18 +1,3 @@
-TYPO3:
-  Neos:
-    typoScript:
-      autoInclude:
-        'Jonnitto.NodeTypes': true
-    userInterface:
-      translation:
-        autoInclude:
-          'Jonnitto.NodeTypes': ['NodeTypes/*']
-    nodeTypes:
-      groups:
-        special:
-          position: 400
-          label: 'Jonnitto.NodeTypes:NodeTypes.Groups:special'
-          collapsed: true
 
 Jonnitto:
   NodeTypes:
@@ -41,10 +26,26 @@ Jonnitto:
       style: 'color:#fff;box-shadow:0 1px 10px rgba(0,0,0,0.1);padding:5% 12px;margin:30px auto;text-align:center;text-decoration:none;outline:none;font-size:20px;'
     container: false
     containerFluid: false
-    instanceOfDocument: '[instanceof TYPO3.Neos:Document]'
+    instanceOfDocument: '[instanceof Neos.Neos:Document]'
     prependIdentifier: id-
     externalTarget: _blank
     assetExternal: 'image,video,pdf'
     assetlist:
       thumbnail:
         width: 200
+Neos:
+  Neos:
+    typoScript:
+      autoInclude:
+        Jonnitto.NodeTypes: true
+    userInterface:
+      translation:
+        autoInclude:
+          Jonnitto.NodeTypes:
+            - 'NodeTypes/*'
+    nodeTypes:
+      groups:
+        special:
+          position: 400
+          label: 'Jonnitto.NodeTypes:NodeTypes.Groups:special'
+          collapsed: true

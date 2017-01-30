@@ -16,7 +16,7 @@ roles:
         privilegeTarget: 'Jonnitto.NodeTypes:Frontend.Download'
         permission: GRANT
 
-  'TYPO3.Neos:Administrator':
+  'Neos.Neos:Administrator':
     privileges:
       -
         privilegeTarget: 'Jonnitto.NodeTypes:BackendNotificationCreate'

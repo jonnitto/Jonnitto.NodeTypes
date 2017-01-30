@@ -19,7 +19,7 @@
         inspector:
           group: settings
           position: 100
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               info:

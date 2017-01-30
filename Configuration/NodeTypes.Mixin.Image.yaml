@@ -112,4 +112,4 @@
           editorOptions:
             placeholder: Pixel
       validation:
-        TYPO3.Neos/Validation/IntegerValidator: {  }
+        Neos.Neos/Validation/IntegerValidator: {  }

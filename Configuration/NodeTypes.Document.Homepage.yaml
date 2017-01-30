@@ -14,7 +14,7 @@
           tab: hide
         visibility:
           tab: hide
-'TYPO3.Neos:Document':
+'Neos.Neos:Document':
   constraints:
     nodeTypes:
       'Jonnitto.NodeTypes:Homepage': false

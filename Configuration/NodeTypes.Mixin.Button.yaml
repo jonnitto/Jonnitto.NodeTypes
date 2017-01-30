@@ -12,7 +12,7 @@
         inspector:
           group: settings
           position: 200
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Jonnitto.NodeTypes:NodeTypes.Button:properties.tagStyle.placeholder'
             allowEmpty: true

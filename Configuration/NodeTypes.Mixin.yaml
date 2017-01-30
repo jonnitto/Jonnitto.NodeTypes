@@ -2,7 +2,7 @@
 'Jonnitto.NodeTypes:Content':
   abstract: true
   superTypes:
-    'TYPO3.Neos:Content': true
+    'Neos.Neos:Content': true
     'Jonnitto.NodeTypes:SettingsMixin': true
 'Jonnitto.NodeTypes:SettingsMixin':
   abstract: true
@@ -239,4 +239,4 @@
         inspector:
           position: 400
           group: settings
-          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
+          editor: Neos.Neos/Inspector/Editors/LinkEditor

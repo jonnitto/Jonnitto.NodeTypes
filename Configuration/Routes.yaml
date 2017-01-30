@@ -1,4 +1,4 @@
-# Make sure to include the following commented route before the TYPO3.Neos subroutes in your global /Configuration/Routes.yaml
+# Make sure to include the following commented route before the Neos.Neos subroutes in your global /Configuration/Routes.yaml
 
 # -
 #   name: 'Jonnitto NodeTypes'

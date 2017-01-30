@@ -2,10 +2,10 @@
 'Jonnitto.NodeTypes:Page':
   abstract: true
   superTypes:
-    'TYPO3.Neos:Document': true
+    'Neos.Neos:Document': true
   childNodes:
     main:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
   ui:
     label: i18n
     icon: icon-file

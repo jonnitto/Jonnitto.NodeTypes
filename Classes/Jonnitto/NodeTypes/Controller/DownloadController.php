@@ -11,7 +11,7 @@ use Neos\Flow\ResourceManagement\ResourceManager;
 /**
  * @Flow\Scope("singleton")
  */
-class DownloadController extends \TYPO3\Neos\Controller\Module\AbstractModuleController {
+class DownloadController extends \Neos\Neos\Controller\Module\AbstractModuleController {
 
     /**
      * @Flow\Inject
