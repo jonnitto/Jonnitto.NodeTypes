@@ -1,7 +1,8 @@
+
 'Jonnitto.NodeTypes:Homepage':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:Page': true
+    'Jonnitto.NodeTypes:Page': '1'
   ui:
     icon: icon-globe
     label: Homepage
@@ -10,16 +11,9 @@
         document:
           tab: meta
         type:
-          tab: hide # Don't display this group
-        #nodeInfo:
-        #  tab: hide # Don't display this group
+          tab: hide
         visibility:
-          tab: hide # Don't display this group
-#  childNodes:
-#    meta:
-#      type: 'TYPO3.Neos:Shortcut'
-
-
+          tab: hide
 'TYPO3.Neos:Document':
   constraints:
     nodeTypes:

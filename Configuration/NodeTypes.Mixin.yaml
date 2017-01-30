@@ -1,9 +1,9 @@
+
 'Jonnitto.NodeTypes:Content':
   abstract: true
   superTypes:
-    'TYPO3.Neos:Content': true
-    'Jonnitto.NodeTypes:SettingsMixin': true
-
+    'TYPO3.Neos:Content': '1'
+    'Jonnitto.NodeTypes:SettingsMixin': '1'
 'Jonnitto.NodeTypes:SettingsMixin':
   abstract: true
   ui:
@@ -13,7 +13,6 @@
           label: i18n
           icon: icon-cog
           position: 50
-
 'Jonnitto.NodeTypes:PureTitleMixin':
   abstract: true
   properties:
@@ -35,15 +34,46 @@
             h4: false
             h5: false
             removeFormat: false
-          table: []
-          link: []
-          list: []
-          alignment: []
+          table: {  }
+          link: {  }
+          list: {  }
+          alignment: {  }
           formatlesspaste:
             button: false
             formatlessPasteOption: true
-            strippedElements: ['h1','h2','h3','h4','h5','h6','p','a','em','strong','small','s','cite','q','dfn','abbr','time','code','var','samp','kbd','i','b','u','mark','ruby','rt','rp','bdi','bdo','ins','del']
-
+            strippedElements:
+              - h1
+              - h2
+              - h3
+              - h4
+              - h5
+              - h6
+              - p
+              - a
+              - em
+              - strong
+              - small
+              - s
+              - cite
+              - q
+              - dfn
+              - abbr
+              - time
+              - code
+              - var
+              - samp
+              - kbd
+              - i
+              - b
+              - u
+              - mark
+              - ruby
+              - rt
+              - rp
+              - bdi
+              - bdo
+              - ins
+              - del
 'Jonnitto.NodeTypes:PureSubtitleMixin':
   abstract: true
   properties:
@@ -65,15 +95,46 @@
             h4: false
             h5: false
             removeFormat: false
-          table: []
-          link: []
-          list: []
-          alignment: []
+          table: {  }
+          link: {  }
+          list: {  }
+          alignment: {  }
           formatlesspaste:
             button: false
             formatlessPasteOption: true
-            strippedElements: ['h1','h2','h3','h4','h5','h6','p','a','em','strong','small','s','cite','q','dfn','abbr','time','code','var','samp','kbd','i','b','u','mark','ruby','rt','rp','bdi','bdo','ins','del']
-
+            strippedElements:
+              - h1
+              - h2
+              - h3
+              - h4
+              - h5
+              - h6
+              - p
+              - a
+              - em
+              - strong
+              - small
+              - s
+              - cite
+              - q
+              - dfn
+              - abbr
+              - time
+              - code
+              - var
+              - samp
+              - kbd
+              - i
+              - b
+              - u
+              - mark
+              - ruby
+              - rt
+              - rp
+              - bdi
+              - bdo
+              - ins
+              - del
 'Jonnitto.NodeTypes:PureTextMixin':
   abstract: true
   properties:
@@ -95,15 +156,46 @@
             h4: false
             h5: false
             removeFormat: false
-          table: []
-          link: []
-          list: []
-          alignment: []
+          table: {  }
+          link: {  }
+          list: {  }
+          alignment: {  }
           formatlesspaste:
             button: false
             formatlessPasteOption: true
-            strippedElements: ['h1','h2','h3','h4','h5','h6','p','a','em','strong','small','s','cite','q','dfn','abbr','time','code','var','samp','kbd','i','b','u','mark','ruby','rt','rp','bdi','bdo','ins','del']
-
+            strippedElements:
+              - h1
+              - h2
+              - h3
+              - h4
+              - h5
+              - h6
+              - p
+              - a
+              - em
+              - strong
+              - small
+              - s
+              - cite
+              - q
+              - dfn
+              - abbr
+              - time
+              - code
+              - var
+              - samp
+              - kbd
+              - i
+              - b
+              - u
+              - mark
+              - ruby
+              - rt
+              - rp
+              - bdi
+              - bdo
+              - ins
+              - del
 'Jonnitto.NodeTypes:TextMixin':
   abstract: true
   properties:
@@ -113,7 +205,7 @@
         inlineEditable: true
         aloha:
           placeholder: 'Jonnitto.NodeTypes:NodeTypes.LoremIpsum:placeholder'
-          alignment: []
+          alignment: {  }
           autoparagraph: true
           format:
             strong: true
@@ -134,11 +226,10 @@
           formatlesspaste:
             button: true
             formatlessPasteOption: true
-
 'Jonnitto.NodeTypes:LinkMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': true
+    'Jonnitto.NodeTypes:SettingsMixin': '1'
   properties:
     link:
       type: string
@@ -148,4 +239,4 @@
         inspector:
           position: 400
           group: settings
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor

@@ -1,7 +1,8 @@
+
 'Jonnitto.NodeTypes:HeadlineTagNameMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': true
+    'Jonnitto.NodeTypes:SettingsMixin': '1'
   properties:
     tagName:
       type: string
@@ -24,11 +25,10 @@
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h3'
               h4:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h4'
-
 'Jonnitto.NodeTypes:HeadlineTagStyleMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': true
+    'Jonnitto.NodeTypes:SettingsMixin': '1'
   properties:
     tagStyle:
       type: string

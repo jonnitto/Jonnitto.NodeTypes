@@ -1,7 +1,8 @@
+
 'Jonnitto.NodeTypes:Text':
   superTypes:
-    'Jonnitto.NodeTypes:Content': true
-    'Jonnitto.NodeTypes:TextMixin': true
+    'Jonnitto.NodeTypes:Content': '1'
+    'Jonnitto.NodeTypes:TextMixin': '1'
   ui:
     label: i18n
     icon: icon-file-text

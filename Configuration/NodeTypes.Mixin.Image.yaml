@@ -1,3 +1,4 @@
+
 'Jonnitto.NodeTypes:ImageSettingsMixin':
   abstract: true
   ui:
@@ -7,11 +8,10 @@
           label: 'Jonnitto.NodeTypes:NodeTypes.Image:groups.image'
           icon: icon-picture
           position: 40
-
 'Jonnitto.NodeTypes:ImageMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': true
+    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
   properties:
     image:
       type: TYPO3\Media\Domain\Model\ImageInterface
@@ -21,11 +21,10 @@
         inspector:
           group: image
           position: 100
-
 'Jonnitto.NodeTypes:ImageAlternativeTextMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': true
+    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
   properties:
     alternativeText:
       type: string
@@ -35,11 +34,10 @@
         inspector:
           group: image
           position: 300
-
 'Jonnitto.NodeTypes:ImageTitleMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': true
+    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
   properties:
     title:
       type: string
@@ -49,11 +47,10 @@
         inspector:
           group: image
           position: 400
-
 'Jonnitto.NodeTypes:ImageLightboxMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': true
+    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
   properties:
     lightbox:
       type: boolean
@@ -63,11 +60,10 @@
         inspector:
           group: settings
           position: 800
-
 'Jonnitto.NodeTypes:ImageCaptionMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:ImageSettingsMixin': true
+    'Jonnitto.NodeTypes:ImageSettingsMixin': '1'
   properties:
     hasCaption:
       type: boolean
@@ -95,14 +91,13 @@
             h4: false
             h5: false
             removeFormat: false
-          table: []
-          link: []
-          list: []
-          alignment: []
+          table: {  }
+          link: {  }
+          list: {  }
+          alignment: {  }
           formatlesspaste:
             button: false
             formatlessPasteOption: true
-
 'Jonnitto.NodeTypes:MaximumWidthMixin':
   abstract: true
   properties:
@@ -117,4 +112,4 @@
           editorOptions:
             placeholder: Pixel
       validation:
-        'TYPO3.Neos/Validation/IntegerValidator': []
+        TYPO3.Neos/Validation/IntegerValidator: {  }

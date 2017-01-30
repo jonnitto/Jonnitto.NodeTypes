@@ -1,3 +1,4 @@
+
 'Jonnitto.NodeTypes:AssetsSettingsMixin':
   abstract: true
   ui:
@@ -7,11 +8,10 @@
           label: i18n
           position: 5
           icon: icon-files-o
-
 'Jonnitto.NodeTypes:AssetsMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AssetsSettingsMixin': true
+    'Jonnitto.NodeTypes:AssetsSettingsMixin': '1'
   properties:
     assets:
       type: array<TYPO3\Media\Domain\Model\Asset>
@@ -19,12 +19,11 @@
         inspector:
           group: resources
         label: i18n
-        reloadIfChanged: TRUE
-
+        reloadIfChanged: true
 'Jonnitto.NodeTypes:ForceDownloadMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AssetsSettingsMixin': true
+    'Jonnitto.NodeTypes:AssetsSettingsMixin': '1'
   properties:
     forceDownload:
       type: boolean
@@ -32,11 +31,10 @@
         label: i18n
         inspector:
           group: resources
-
 'Jonnitto.NodeTypes:ThumbnailMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AssetsSettingsMixin': true
+    'Jonnitto.NodeTypes:AssetsSettingsMixin': '1'
   properties:
     thumbnail:
       type: boolean

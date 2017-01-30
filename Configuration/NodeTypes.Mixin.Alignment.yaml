@@ -1,7 +1,8 @@
+
 'Jonnitto.NodeTypes:AlignmentMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:SettingsMixin': true
+    'Jonnitto.NodeTypes:SettingsMixin': '1'
   properties:
     alignment:
       type: string
@@ -15,11 +16,10 @@
           editorOptions:
             placeholder: i18n
             allowEmpty: true
-
 'Jonnitto.NodeTypes:AlignmentLeftMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -29,11 +29,10 @@
               left:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:left'
                 icon: icon-align-left
-
 'Jonnitto.NodeTypes:AlignmentCenterMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -43,11 +42,10 @@
               center:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:center'
                 icon: icon-align-center
-
 'Jonnitto.NodeTypes:AlignmentRightMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -57,11 +55,10 @@
               right:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:right'
                 icon: icon-align-right
-
 'Jonnitto.NodeTypes:AlignmentFloatLeftMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -71,11 +68,10 @@
               floatLeft:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatLeft'
                 icon: icon-align-left
-
 'Jonnitto.NodeTypes:AlignmentFloatRightMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -85,11 +81,10 @@
               floatRight:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatRight'
                 icon: icon-align-right
-
 'Jonnitto.NodeTypes:AlignmentTopMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -99,11 +94,10 @@
               top:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:top'
                 icon: icon-arrow-up
-
 'Jonnitto.NodeTypes:AlignmentBottomMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
@@ -113,11 +107,10 @@
               bottom:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:bottom'
                 icon: icon-arrow-down
-
 'Jonnitto.NodeTypes:AlignmentBleedMixin':
   abstract: true
   superTypes:
-    'Jonnitto.NodeTypes:AlignmentMixin': true
+    'Jonnitto.NodeTypes:AlignmentMixin': '1'
   properties:
     alignment:
       ui:
