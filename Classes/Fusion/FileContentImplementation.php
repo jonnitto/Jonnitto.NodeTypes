@@ -1,5 +1,5 @@
 <?php
-namespace Jonnitto\NodeTypes\TypoScript;
+namespace Jonnitto\NodeTypes\Fusion;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
@@ -16,7 +16,7 @@ class FileContentImplementation extends AbstractFusionObject
      */
     public function getPath()
     {
-        return $this->tsValue('path');
+        return $this->fusionValue('path');
     }
 
     /**
@@ -26,7 +26,7 @@ class FileContentImplementation extends AbstractFusionObject
      */
     public function getResource()
     {
-        return $this->tsValue('resource');
+        return $this->fusionValue('resource');
     }
 
     /**

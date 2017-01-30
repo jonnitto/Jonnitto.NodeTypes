@@ -1,7 +1,7 @@
 {
     "name": "jonnitto/nodetypes",
     "type": "typo3-flow-plugin",
-    "version": "0.1.21",
+    "version": "0.2.0",
     "license": "MIT",
     "description": "Some NodeTypes for the greatest Content System on earth: Neos.io",
     "keywords": [
@@ -19,11 +19,11 @@
         }
     ],
     "require": {
-        "typo3/neos": "^2.3"
+        "typo3/neos": "^3.0"
     },
     "autoload": {
-        "psr-0": {
-            "Jonnitto\\NodeTypes": "Classes"
+        "psr-4": {
+            "Jonnitto\\NodeTypes\\": "Classes"
         }
     },
     "extra": {
