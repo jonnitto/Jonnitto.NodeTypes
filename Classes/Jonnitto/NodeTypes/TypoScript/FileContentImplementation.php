@@ -2,11 +2,11 @@
 namespace Jonnitto\NodeTypes\TypoScript;
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Fusion\TypoScriptObjects\AbstractTypoScriptObject;
+use Neos\Fusion\FusionObjects\AbstractFusionObject;
 use Neos\Flow\Utility;
 
 
-class FileContentImplementation extends AbstractTypoScriptObject
+class FileContentImplementation extends AbstractFusionObject
 {
 
     /**
