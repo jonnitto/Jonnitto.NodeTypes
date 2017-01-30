@@ -4,9 +4,9 @@ namespace Jonnitto\NodeTypes\Controller;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Error\Message;
 
-use TYPO3\Flow\Resource\Resource as FlowResource;
-use TYPO3\Flow\Resource\ResourceRepository;
-use TYPO3\Flow\Resource\ResourceManager;
+use TYPO3\Flow\ResourceManagement\PersistentResource as FlowResource;
+use TYPO3\Flow\ResourceManagement\ResourceRepository;
+use TYPO3\Flow\ResourceManagement\ResourceManager;
 
 /**
  * @Flow\Scope("singleton")
