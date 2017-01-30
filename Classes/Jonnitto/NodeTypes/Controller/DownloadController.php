@@ -2,7 +2,7 @@
 namespace Jonnitto\NodeTypes\Controller;
 
 use Neos\Flow\Annotations as Flow;
-use Neos\Flow\Error\Message;
+use Neos\Error\Messages\Message;
 
 use Neos\Flow\ResourceManagement\PersistentResource as FlowResource;
 use Neos\Flow\ResourceManagement\ResourceRepository;
