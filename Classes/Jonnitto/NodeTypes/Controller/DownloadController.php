@@ -1,12 +1,12 @@
 <?php
 namespace Jonnitto\NodeTypes\Controller;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Error\Message;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Error\Message;
 
-use TYPO3\Flow\ResourceManagement\PersistentResource as FlowResource;
-use TYPO3\Flow\ResourceManagement\ResourceRepository;
-use TYPO3\Flow\ResourceManagement\ResourceManager;
+use Neos\Flow\ResourceManagement\PersistentResource as FlowResource;
+use Neos\Flow\ResourceManagement\ResourceRepository;
+use Neos\Flow\ResourceManagement\ResourceManager;
 
 /**
  * @Flow\Scope("singleton")

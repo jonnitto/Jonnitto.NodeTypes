@@ -1,9 +1,9 @@
 <?php
 namespace Jonnitto\NodeTypes\TypoScript;
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject;
-use TYPO3\Flow\Utility;
+use Neos\Flow\Utility;
 
 
 class FileContentImplementation extends AbstractTypoScriptObject
