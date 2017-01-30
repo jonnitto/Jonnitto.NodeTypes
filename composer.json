@@ -4,7 +4,12 @@
     "version": "0.1.21",
     "license": "MIT",
     "description": "Some NodeTypes for the greatest Content System on earth: Neos.io",
-    "keywords": ["flow", "neos", "content", "nodetypes"],
+    "keywords": [
+        "flow",
+        "neos",
+        "content",
+        "nodetypes"
+    ],
     "authors": [
         {
             "name": "Jon Uhlmann",
@@ -26,6 +31,9 @@
         "installer-name": "Jonnitto.NodeTypes",
         "neos": {
             "package-key": "Jonnitto.NodeTypes"
-        }
+        },
+        "applied-flow-migrations": [
+            "TYPO3.FLOW3-201201261636"
+        ]
     }
 }
