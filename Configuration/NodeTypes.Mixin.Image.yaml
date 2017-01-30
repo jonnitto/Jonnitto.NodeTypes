@@ -14,7 +14,7 @@
     'Jonnitto.NodeTypes:ImageSettingsMixin': true
   properties:
     image:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Jonnitto.NodeTypes:NodeTypes.Image:properties.image'
         reloadIfChanged: true
