@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:Button':
   superTypes:
     'Jonnitto.NodeTypes:Content': true

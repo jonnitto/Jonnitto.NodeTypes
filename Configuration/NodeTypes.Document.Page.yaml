@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:Page':
   abstract: true
   superTypes:

@@ -1,9 +1,9 @@
-
 'Jonnitto.NodeTypes:Content':
   abstract: true
   superTypes:
     'Neos.Neos:Content': true
     'Jonnitto.NodeTypes:SettingsMixin': true
+
 'Jonnitto.NodeTypes:SettingsMixin':
   abstract: true
   ui:
@@ -13,6 +13,7 @@
           label: i18n
           icon: icon-cog
           position: 50
+
 'Jonnitto.NodeTypes:PureTitleMixin':
   abstract: true
   properties:
@@ -74,6 +75,7 @@
               - bdo
               - ins
               - del
+
 'Jonnitto.NodeTypes:PureSubtitleMixin':
   abstract: true
   properties:
@@ -135,6 +137,7 @@
               - bdo
               - ins
               - del
+
 'Jonnitto.NodeTypes:PureTextMixin':
   abstract: true
   properties:
@@ -196,6 +199,7 @@
               - bdo
               - ins
               - del
+
 'Jonnitto.NodeTypes:TextMixin':
   abstract: true
   properties:
@@ -226,6 +230,7 @@
           formatlesspaste:
             button: true
             formatlessPasteOption: true
+
 'Jonnitto.NodeTypes:LinkMixin':
   abstract: true
   superTypes:

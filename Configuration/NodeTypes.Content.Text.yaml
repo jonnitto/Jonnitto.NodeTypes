@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:Text':
   superTypes:
     'Jonnitto.NodeTypes:Content': true

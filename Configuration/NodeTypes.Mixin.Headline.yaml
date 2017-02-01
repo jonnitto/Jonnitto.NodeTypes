@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:HeadlineTagNameMixin':
   abstract: true
   superTypes:
@@ -25,6 +24,7 @@
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h3'
               h4:
                 label: 'Jonnitto.NodeTypes:NodeTypes.Headline:properties.h4'
+
 'Jonnitto.NodeTypes:HeadlineTagStyleMixin':
   abstract: true
   superTypes:

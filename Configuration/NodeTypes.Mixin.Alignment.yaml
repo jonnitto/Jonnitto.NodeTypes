@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:AlignmentMixin':
   abstract: true
   superTypes:
@@ -16,6 +15,7 @@
           editorOptions:
             placeholder: i18n
             allowEmpty: true
+
 'Jonnitto.NodeTypes:AlignmentLeftMixin':
   abstract: true
   superTypes:
@@ -29,6 +29,7 @@
               left:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:left'
                 icon: icon-align-left
+
 'Jonnitto.NodeTypes:AlignmentCenterMixin':
   abstract: true
   superTypes:
@@ -42,6 +43,7 @@
               center:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:center'
                 icon: icon-align-center
+
 'Jonnitto.NodeTypes:AlignmentRightMixin':
   abstract: true
   superTypes:
@@ -55,6 +57,7 @@
               right:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:right'
                 icon: icon-align-right
+
 'Jonnitto.NodeTypes:AlignmentFloatLeftMixin':
   abstract: true
   superTypes:
@@ -68,6 +71,7 @@
               floatLeft:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatLeft'
                 icon: icon-align-left
+
 'Jonnitto.NodeTypes:AlignmentFloatRightMixin':
   abstract: true
   superTypes:
@@ -81,6 +85,7 @@
               floatRight:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:floatRight'
                 icon: icon-align-right
+
 'Jonnitto.NodeTypes:AlignmentTopMixin':
   abstract: true
   superTypes:
@@ -94,6 +99,7 @@
               top:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:top'
                 icon: icon-arrow-up
+
 'Jonnitto.NodeTypes:AlignmentBottomMixin':
   abstract: true
   superTypes:
@@ -107,6 +113,7 @@
               bottom:
                 label: 'Jonnitto.NodeTypes:NodeTypes.AlignmentMixin:bottom'
                 icon: icon-arrow-down
+
 'Jonnitto.NodeTypes:AlignmentBleedMixin':
   abstract: true
   superTypes:

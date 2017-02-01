@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:Homepage':
   abstract: true
   superTypes:
@@ -14,6 +13,7 @@
           tab: hide
         visibility:
           tab: hide
+
 'Neos.Neos:Document':
   constraints:
     nodeTypes:

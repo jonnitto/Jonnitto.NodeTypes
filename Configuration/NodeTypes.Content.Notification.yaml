@@ -1,4 +1,3 @@
-
 'Jonnitto.NodeTypes:Notification':
   superTypes:
     'Jonnitto.NodeTypes:Content': true
