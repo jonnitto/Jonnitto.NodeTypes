@@ -8,7 +8,8 @@ prototype(NT:InlineEditableTag) < prototype(Fusion:Tag) {
 	attributes = NT:LinkAttributes
 	content = ${q(node).property(property)}
 
-	@process.contentElementEditable = ContentElementEditable
-	@process.contentElementEditable.property = ${property}
+	@process.contentElementEditable = ContentElementEditable {
+		property = ${property}
+	}
 	@if.render = NT:NeededProperties
 }
