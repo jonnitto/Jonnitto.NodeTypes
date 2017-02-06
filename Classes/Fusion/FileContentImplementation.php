@@ -3,7 +3,7 @@ namespace Jonnitto\NodeTypes\Fusion;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Fusion\FusionObjects\AbstractFusionObject;
-use Neos\Flow\Utility;
+use Neos\Utility\Files;
 
 
 class FileContentImplementation extends AbstractFusionObject
@@ -44,7 +44,7 @@ class FileContentImplementation extends AbstractFusionObject
 
         $path = $this->getPath();
         if ($path) {
-            return Utility\Files::getFileContents($path);
+            return Files::getFileContents($path);
         }
 
         return false;
