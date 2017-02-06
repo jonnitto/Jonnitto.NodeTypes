@@ -1,6 +1,6 @@
 prototype(NT:LinkClass) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
-	prepend = ${this.property}
+	prepend = ${String.toLowerCase(this.property)}
 	divider = '-'
 
 	@context.read = ${q(node).property(this.property)}
