@@ -24,8 +24,8 @@ prototype(NT:AssetList) < prototype(NT:Content) {
 			condition = true
 			renderer = Fusion:Tag {
 				attributes.style = Fusion:Array {
-					default = ${configJonnittoNodeTypes.Notification.style}
-					type = ${configJonnittoNodeTypes.Notification.warning}
+					default = ${Configuration.setting('Jonnitto.NodeTypes.Notification.style')}
+					type = ${Configuration.setting('Jonnitto.NodeTypes.Notification.warning')}
 				}
 				content = ${Translation.translate('content.emptyAssetList', null, [], 'NodeTypes/AssetList', 'Jonnitto.NodeTypes')}
 				@if.inEditMode = ${node.context.currentRenderingMode.edit}

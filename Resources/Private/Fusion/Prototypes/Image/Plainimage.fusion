@@ -10,7 +10,7 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 		property = 'maximumWidth'
 		configuration = 'Image.maximumWidth'
 	}
-	maximumHeight = ${configJonnittoNodeTypes.Image.maximumHeight}
+	maximumHeight = ${Configuration.setting('Jonnitto.NodeTypes.Image.maximumHeight')}
 	allowCropping = false
 	allowUpScaling = false
 
@@ -29,7 +29,7 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 
 	value = Fusion:Case {
 		isInlineSVG {
-			condition = ${(asset && configJonnittoNodeTypes.Image.inlineSVG && asset.resource.fileextension == 'svg') ? true : false}
+			condition = ${(asset && Configuration.setting('Jonnitto.NodeTypes.Image.inlineSVG') && asset.resource.fileextension == 'svg') ? true : false}
 			renderer = NT:FileContent {
 				resource = ${asset.resource}
 			}

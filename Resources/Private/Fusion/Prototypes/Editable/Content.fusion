@@ -13,13 +13,13 @@ prototype(NT:Content) < prototype(Fusion:Tag) {
 	isFirstElement = NT:IsFirstElement
 	isFirstElement.@if.isContentElement = ${this.isContentElement}
 
-	isOnDocument = ${q(node).parent().parent().is(configJonnittoNodeTypes.instanceOfDocument)}
+	isOnDocument = ${q(node).parent().parent().is(Configuration.setting('Jonnitto.NodeTypes.instanceOfDocument'))}
 
 	attributes.class = Fusion:RawArray {
 		nodeType = ${isContentElement ? nodeTypeName : false}
 		# Is parent a document => add container class
 		container = Fusion:Value {
-			value = ${containerFluid ? configJonnittoNodeTypes.containerFluid : configJonnittoNodeTypes.container}
+			value = ${containerFluid ? Configuration.setting('Jonnitto.NodeTypes.containerFluid') : Configuration.setting('Jonnitto.NodeTypes.container')}
 			@if.isOnDocumentAndContentElement = ${isOnDocument && isContentElement}
 		}
 	}

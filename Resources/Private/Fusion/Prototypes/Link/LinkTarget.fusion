@@ -1,7 +1,7 @@
 prototype(NT:LinkTarget) < prototype(Fusion:Value) {
 	property = ${property ? property : 'link'}
-	target = ${configJonnittoNodeTypes.externalTarget}
-	assetExternal = ${String.toLowerCase(configJonnittoNodeTypes.assetExternal)}
+	target = ${Configuration.setting('Jonnitto.NodeTypes.externalTarget')}
+	assetExternal = ${String.toLowerCase(Configuration.setting('Jonnitto.NodeTypes.assetExternal'))}
 
 	@context {
 		read = ${q(node).property(this.property)}

@@ -4,13 +4,13 @@ prototype(NT:Button) < prototype(NT:InlineEditableLink) {
 	@context {
 		prevIsButton = ${q(node).prev().is('[instanceof Jonnitto.NodeTypes:Button]')}
 		nextIsButton = ${q(node).next().is('[instanceof Jonnitto.NodeTypes:Button]')}
-		wrapClass = ${this.isOnDocument ? this.containerFluid ? configJonnittoNodeTypes.containerFluid : configJonnittoNodeTypes.container : false}
+		wrapClass = ${this.isOnDocument ? this.containerFluid ? Configuration.setting('Jonnitto.NodeTypes.containerFluid') : Configuration.setting('Jonnitto.NodeTypes.container') : false}
 		cacheCollection = ${q(node).next().add(q(node).prev())}
 	}
 
 	attributes.class {
 		container >
-		btn = ${configJonnittoNodeTypes.Button.defaultClassName}
+		btn = ${Configuration.setting('Jonnitto.NodeTypes.Button.defaultClassName')}
 		style = Fusion:Array {
 			tagStyle = NT:PropertyFromConfigIfNotSet {
 				property = 'tagStyle'
@@ -54,7 +54,7 @@ prototype(NT:Button) < prototype(NT:InlineEditableLink) {
 						tag = Fusion:Tag {
 							omitClosingTag = true
 							attributes.class = Fusion:RawArray {
-								group = ${configJonnittoNodeTypes.Button.groupClassName}
+								group = ${Configuration.setting('Jonnitto.NodeTypes.Button.groupClassName')}
 								wrapClass = ${wrapClass}
 							}
 						}

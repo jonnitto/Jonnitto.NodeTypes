@@ -9,8 +9,8 @@ prototype(NT:LinkURI) < prototype(Fusion:Value) {
 			condition = ${linkType == 'node'}
 			renderer = NodeUri {
 				@context.nodeObject = ${Neos.Link.convertUriToObject(read, node)}
-				node = ${q(nodeObject).closest(configJonnittoNodeTypes.instanceOfDocument).get(0)}
-				section = ${q(nodeObject).is(configJonnittoNodeTypes.instanceOfDocument) ? false : configJonnittoNodeTypes.prependIdentifier + nodeObject.identifier}
+				node = ${q(nodeObject).closest(Configuration.setting('Jonnitto.NodeTypes.instanceOfDocument')).get(0)}
+				section = ${q(nodeObject).is(Configuration.setting('Jonnitto.NodeTypes.instanceOfDocument')) ? false : Configuration.setting('Jonnitto.NodeTypes.prependIdentifier') + nodeObject.identifier}
 			}
 		}
 		isAssetOrExternal {

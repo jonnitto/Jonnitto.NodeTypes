@@ -1,10 +1,6 @@
 namespace: Fusion = Neos.Fusion
 namespace: NT = Jonnitto.NodeTypes
 
-// Make these variables everywhere available
-root.@context {
-	configJonnittoNodeTypes = ${Configuration.setting('Jonnitto.NodeTypes')}
-}
 
 include: Prototypes/**/*.fusion
 include: NodeTypes/**/*.fusion

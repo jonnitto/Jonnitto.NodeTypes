@@ -25,7 +25,7 @@ prototype(NT:Image) < prototype(NT:Content) {
 			property = 'maximumWidth'
 			configuration = 'Image.bleedWidth'
 		}
-		bleedHeight = ${configJonnittoNodeTypes.Image.bleedHeight}
+		bleedHeight = ${Configuration.setting('Jonnitto.NodeTypes.Image.bleedHeight')}
 
 		@context {
 			maximumWidth = ${containerFluid ? this.bleedWith : this.maximumWidth}
