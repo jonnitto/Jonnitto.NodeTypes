@@ -1,7 +1,7 @@
 prototype(NT:LightboxAttributes) < prototype(Fusion:Attributes) {
 	@context.asset = ${asset ? asset : property ? q(node).property(property) : q(node).property('image')}
-	target = ${Configuration.setting('Jonnitto.NodeTypesImage.lightbox.target')}
-	class = ${Configuration.setting('Jonnitto.NodeTypesImage.lightbox.class}')}
+	target = ${Configuration.setting('Jonnitto.NodeTypes.Image.lightbox.target')}
+	class = ${Configuration.setting('Jonnitto.NodeTypes.Image.lightbox.class')}
 	data-size = Fusion:Array {
 		width = ${asset.width}
 		divider = 'x'
