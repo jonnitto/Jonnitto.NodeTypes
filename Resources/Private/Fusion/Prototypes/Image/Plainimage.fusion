@@ -11,6 +11,8 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 		configuration = 'Image.maximumWidth'
 	}
 	maximumHeight = ${Configuration.setting('Jonnitto.NodeTypes.Image.maximumHeight')}
+	width = null
+	height = null
 	allowCropping = false
 	allowUpScaling = false
 
@@ -21,6 +23,8 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 		altText = ${this.alternativeText ? q(node).property(this.alternativeText) : false}
 		maximumWidth = ${this.maximumWidth}
 		maximumHeight = ${this.maximumHeight}
+		width = ${this.width}
+		height = ${this.height}
 		allowCropping = ${this.allowCropping}
 		allowUpScaling = ${this.allowUpScaling}
 		checkRatio = ${this.checkRatio}
@@ -63,6 +67,17 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 					ratio = ${this.ratio}
 				}
 
+				prototype(ImageUri) {
+					multiplicator = 1
+					asset = ${asset}
+					allowCropping = ${allowCropping}
+					allowUpScaling = ${allowUpScaling}
+					maximumWidth = ${width ? null : maximumWidth * this.multiplicator}
+					maximumHeight = ${height ? null : maximumHeight * this.multiplicator}
+					width = ${width * this.multiplicator}
+					height = ${height * this.multiplicator}
+				}
+
 				@ignoreProperties = ${['ratio']}
 
 				tagName = 'img'
@@ -82,13 +97,7 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 					src = Fusion:Case {
 						hasImage {
 							condition = ${asset}
-							renderer = ImageUri {
-								asset = ${asset}
-								maximumWidth = ${maximumWidth}
-								maximumHeight = ${maximumHeight}
-								allowCropping = ${allowCropping}
-								allowUpScaling = ${allowUpScaling}
-							}
+							renderer = ImageUri
 						}
 						inEditMode {
 							condition = true
@@ -99,31 +108,28 @@ prototype(NT:Plainimage) < prototype(Fusion:Value) {
 						}
 					}
 					srcset = Fusion:Array {
+						prototype(ImageUri) {
+							calcW = ${width ? width : maximumWidth}
+							calcH = ${height ? height : maximumHeight}
+							@process.addResolution = ${',' + value + ' ' + this.multiplicator + 'x'}
+							@if.hasEnoughPixel = ${asset.width >= this.calcW * this.multiplicator && asset.height >= this.calcH * this.multiplicator}
+						}
+						null5 = ImageUri {
+							multiplicator = 0.5
+							@process.addResolution = ${value + ' 0.5x'}
+							@if.hasEnoughPixel = true
+						}
 						1 = ImageUri {
-							asset = ${asset}
-							maximumWidth = ${maximumWidth}
-							maximumHeight = ${maximumHeight}
-							allowCropping = ${allowCropping}
-							allowUpScaling = ${allowUpScaling}
-							@process.addResolution = ${value + ' 1x'}
+							@if.hasEnoughPixel = true
 						}
 						2 = ImageUri {
-							asset = ${asset}
-							maximumWidth = ${maximumWidth * 2}
-							maximumHeight = ${maximumHeight * 2}
-							allowCropping = ${allowCropping}
-							allowUpScaling = ${allowUpScaling}
-							@process.addResolution = ${',' + value + ' 2x'}
-							@if.hasEnoughPixel = ${asset.width >= maximumWidth * 2 && asset.height >= maximumHeight * 2}
+							multiplicator = 2
 						}
 						3 = ImageUri {
-							asset = ${asset}
-							maximumWidth = ${maximumWidth * 3}
-							maximumHeight = ${maximumHeight * 3}
-							allowCropping = ${allowCropping}
-							allowUpScaling = ${allowUpScaling}
-							@process.addResolution = ${',' + value + ' 3x'}
-							@if.hasEnoughPixel = ${asset.width >= maximumWidth * 3 && asset.height >= maximumHeight * 3}
+							multiplicator = 3
+						}
+						4 = ImageUri {
+							multiplicator = 4
 						}
 						@if.hasAsset = ${asset}
 					}
