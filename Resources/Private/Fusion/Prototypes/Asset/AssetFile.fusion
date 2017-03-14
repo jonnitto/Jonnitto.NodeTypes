@@ -40,5 +40,16 @@ prototype(NT:AssetFile) < prototype(Fusion:Tag) {
 			}
 		}
 	}
-	content = NT:AssetFileName
+	content = Fusion:Case {
+		hasThumbnail {
+			condition = ${thumbnail ? true : false}
+			renderer = NT:AssetFileNameThumbnail
+		}
+		default {
+			condition = true
+			renderer = NT:AssetFileNameText
+		}
+	}
+
+
 }

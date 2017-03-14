@@ -1,56 +1,11 @@
-prototype(NT:AssetFileName) < prototype(Fusion:Array) {
-	thumbnail = Fusion:Tag {
-		tagName = 'figure'
-		attributes.class = Fusion:RawArray {
-			thumb = 'asset-thumbnail'
-		}
-		content = NT:Plainimage {
-			asset = ${asset}
-			maximumWidth = ${Configuration.setting('Jonnitto.NodeTypes.assetlist.thumbnail.width')}
-			checkRatio = false
-			additionalClass = 'img-asset-thumbnail'
-		}
-
-		@if.active = ${thumbnail ? true : false}
+prototype(NT:AssetFileName) < prototype(Fusion:Case) {
+	hasThumbnail {
+		condition = ${thumbnail ? true : false}
+		renderer = NT:AssetFileNameThumbnail
 	}
 
-	text = Fusion:Tag {
-		tagName = 'span'
-		attributes.class = Fusion:RawArray {
-			text = 'asset-text'
-		}
-		content = Fusion:Array {
-			file = Fusion:Tag {
-				tagName = 'span'
-				attributes.class = Fusion:RawArray {
-					text = 'asset-text-file'
-				}
-				content = Fusion:Array {
-					title = Fusion:Case {
-						hasTitle {
-							condition = ${asset.title}
-							renderer = ${asset.title}
-						}
-						default {
-							condition = true
-							renderer = ${String.replace(String.replace(asset.resource.filename, '_', ' '), '.' + asset.resource.fileextension, '')}
-						}
-						@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
-					}
-					caption = ${asset.caption}
-				}
-			}
-			divider = ' '
-			info = Fusion:Tag {
-				tagName = 'small'
-				content = Fusion:Array {
-					fileextension = ${asset.resource.fileextension}
-					divider = ', '
-					filesize = NT:Filesize
-				}
-			}
-		}
+	default {
+		condition = true
+		renderer = NT:AssetFileNameText
 	}
-
-	@if.hasAsset = ${asset}
 }

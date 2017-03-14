@@ -5,6 +5,12 @@
 			<trans-unit id="link.content.fallback" xml:space="preserve">
 				<source>Lien</source>
 			</trans-unit>
+			<trans-unit id="file.download" xml:space="preserve">
+				<source>Télécharger le fichier {0}</source>
+			</trans-unit>
+			<trans-unit id="file.open" xml:space="preserve">
+				<source>Ouvrir {0}</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

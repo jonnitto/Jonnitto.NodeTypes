@@ -1,0 +1,32 @@
+prototype(NT:AssetFileNameText) < prototype(Fusion:Array) {
+	file = Fusion:Tag {
+		tagName = 'span'
+		attributes.class = 'asset-text-file'
+		content = Fusion:Array {
+			title = Fusion:Case {
+				hasTitle {
+					condition = ${asset.title}
+					renderer = ${asset.title}
+				}
+				default {
+					condition = true
+					renderer = ${String.replace(String.replace(asset.resource.filename, '_', ' '), '.' + asset.resource.fileextension, '')}
+				}
+				@process.strongIfCaption = ${asset.caption ? '<strong>' + value + '</strong> ' : value}
+			}
+			caption = ${asset.caption}
+		}
+	}
+	divider = ' '
+	info = Fusion:Tag {
+		tagName = 'small'
+		attributes.class = 'asset-text-info'
+		content = Fusion:Array {
+			fileextension = ${asset.resource.fileextension}
+			divider = ', '
+			filesize = NT:Filesize
+		}
+	}
+
+	@if.hasAsset = ${asset}
+}
