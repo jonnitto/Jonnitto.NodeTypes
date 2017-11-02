@@ -5,8 +5,21 @@ Jonnitto.NodeTypes
 [![Total Downloads](https://poser.pugx.org/jonnitto/nodetypes/downloads)](https://packagist.org/packages/jonnitto/nodetypes)
 [![License](https://poser.pugx.org/jonnitto/nodetypes/license)](https://packagist.org/packages/jonnitto/nodetypes)
 
-Some NodeTypes for the greatest Content System on earth: [Neos](https://www.neos.io). The Elements only get rendered of there is any content.  
-Work in progress.
+Some NodeTypes for the greatest Content System on earth: [Neos](https://www.neos.io). The Elements only get rendered of there is any content.
+
+Important
+=========
+I split this package up in several other packages:
+
+* [Jonnitto.Headline](https://github.com/jonnitto/Jonnitto.Headline)
+* [Jonnitto.Text](https://github.com/jonnitto/Jonnitto.Text)
+* [Jonnitto.AssetList](https://github.com/jonnitto/Jonnitto.AssetList)
+* [Jonnitto.MultiColumn](https://github.com/jonnitto/Jonnitto.MultiColumn)
+* [Jonnitto.Image](https://github.com/jonnitto/Jonnitto.Image) and/or * [Jonnitto.Picture](https://github.com/jonnitto/Jonnitto.Picture)
+* [Jonnitto.TextWithPicture](https://github.com/jonnitto/Jonnitto.TextWithPicture)
+* [Jonnitto.ImagesInARow](https://github.com/jonnitto/Jonnitto.ImagesInARow)
+
+I recomend to use these, because in the newest version is this package only a link to these new packages.
 
 Installation
 ------------
@@ -17,28 +30,6 @@ composer require jonnitto/nodetypes --no-update
 ```
 
 The --no-update command prevent the automatic update of the dependencies. After the package was added to your theme composer.json, go back to the root of the Neos installation and run composer update. Et voilà! Your desired package is now installed correctly.
-
-
-
-Replacement for Neos.NodeTypes
-------------------------------
-* Headline
-	* Without Aloha, you can choose markup, style, alignment a link in the inspector. The headline tag is the outer element. In that way, all the css stylings get easier.
-* Image
-* Text
-
-
-Atoms
------
-* Button
-* Headline
-* Text
-
-
-Molecules
----------
-* Notification
-* Image
 
 
 Credits
