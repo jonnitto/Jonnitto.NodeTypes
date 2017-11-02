@@ -2,8 +2,7 @@
     "name": "jonnitto/nodetypes",
     "type": "neos-plugin",
     "license": "MIT",
-    "description":
-        "Some NodeTypes for the greatest Content System on earth: Neos.io",
+    "description": "Some NodeTypes for the greatest Content System on earth: Neos.io",
     "keywords": ["flow", "neos", "content", "nodetypes"],
     "authors": [
         {
@@ -20,6 +19,9 @@
         "jonnitto/image": "^1.0",
         "jonnitto/text": "^0.1",
         "jonnitto/headline": "^1.0"
+    },
+    "archive": {
+        "exclude": [".editorconfig", ".github", ".gitattributes", "CODE_OF_CONDUCT.md"]
     },
     "autoload": {
         "psr-4": {

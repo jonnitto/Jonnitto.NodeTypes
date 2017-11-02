@@ -4,44 +4,24 @@
 root = true
 
 
-# Tab; Default
-# html, CSS, SCSS, JS, ..,
+# Default
 
 [*]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing-whitespace = true
-indent_style = tab
-indent_size = 4
-
-# 4 Space; PSR-2
-# Use your IDE Code Style Config too..
-
-[*.{php,json}]
 indent_style = space
 indent_size = 4
-
-
-# 2 Spaces
-
-[*.{yaml,yml,sh,jscsrc}]
-indent_style = space
-indent_size = 2
-
-[.*rc]
-indent_style = space
-indent_size = 2
-
 
 # Exceptions
+[{*.{yaml,yml,sh,jscsrc,scss},package.json,.*rc}]
+indent_size = 2
 
-[composer.*]
-indent_style = space
-indent_size = 4
+[*.{json,scss}]
+max_line_length = 1000
 
 [Sites.xml]
-indent_style = space
 indent_size = 1
 
 [*.{note,md,edit,read}]
