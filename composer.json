@@ -2,13 +2,9 @@
     "name": "jonnitto/nodetypes",
     "type": "neos-plugin",
     "license": "MIT",
-    "description": "Some NodeTypes for the greatest Content System on earth: Neos.io",
-    "keywords": [
-        "flow",
-        "neos",
-        "content",
-        "nodetypes"
-    ],
+    "description":
+        "Some NodeTypes for the greatest Content System on earth: Neos.io",
+    "keywords": ["flow", "neos", "content", "nodetypes"],
     "authors": [
         {
             "name": "Jon Uhlmann",
@@ -18,7 +14,8 @@
         }
     ],
     "require": {
-        "neos/neos": "~3.0 || dev-master"
+        "neos/neos": "~3.0 || dev-master",
+        "jonnitto/headline": "^1.0"
     },
     "autoload": {
         "psr-4": {

@@ -1,8 +1,5 @@
 Jonnitto:
   NodeTypes:
-    Headline:
-      firstTagName: h1
-      defaultTagName: h2
     Button:
       defaultClassName: btn
       defaultStyle: secondary
