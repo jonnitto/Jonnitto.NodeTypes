@@ -15,7 +15,7 @@ I split this package up in several other packages:
 * [Jonnitto.Text](https://github.com/jonnitto/Jonnitto.Text)
 * [Jonnitto.AssetList](https://github.com/jonnitto/Jonnitto.AssetList)
 * [Jonnitto.MultiColumn](https://github.com/jonnitto/Jonnitto.MultiColumn)
-* [Jonnitto.Image](https://github.com/jonnitto/Jonnitto.Image) and/or * [Jonnitto.Picture](https://github.com/jonnitto/Jonnitto.Picture)
+* [Jonnitto.Image](https://github.com/jonnitto/Jonnitto.Image) and/or [Jonnitto.Picture](https://github.com/jonnitto/Jonnitto.Picture)
 * [Jonnitto.TextWithPicture](https://github.com/jonnitto/Jonnitto.TextWithPicture)
 * [Jonnitto.ImagesInARow](https://github.com/jonnitto/Jonnitto.ImagesInARow)
 
