@@ -1,8 +1,0 @@
-'Jonnitto.NodeTypes:Text':
-  superTypes:
-    'Jonnitto.NodeTypes:Content': true
-    'Jonnitto.NodeTypes:TextMixin': true
-  ui:
-    label: i18n
-    icon: icon-file-text
-    position: 200

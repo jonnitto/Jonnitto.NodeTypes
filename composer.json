@@ -17,6 +17,7 @@
         "neos/neos": "~3.0 || dev-master",
         "jonnitto/assetlist": "^2.1",
         "jonnitto/image": "^1.0",
+        "jonnitto/text": "^0.1",
         "jonnitto/headline": "^1.0"
     },
     "autoload": {
