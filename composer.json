@@ -15,6 +15,7 @@
     ],
     "require": {
         "neos/neos": "~3.0 || dev-master",
+        "carbon/link": "*",
         "jonnitto/assetlist": "^2.1",
         "jonnitto/image": "^1.0",
         "jonnitto/text": "^0.1",

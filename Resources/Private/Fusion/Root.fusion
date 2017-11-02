@@ -1,6 +1,0 @@
-namespace: Fusion = Neos.Fusion
-namespace: NT = Jonnitto.NodeTypes
-
-
-include: Prototypes/**/*.fusion
-include: NodeTypes/**/*.fusion

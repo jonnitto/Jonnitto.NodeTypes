@@ -1,18 +1,3 @@
-Jonnitto:
-  NodeTypes:
-    Button:
-      defaultClassName: btn
-      defaultStyle: secondary
-      groupClassName: btn-group
-    Notification:
-      alert: 'background:#d9534f;'
-      warning: 'background:#f0ad4e;'
-      info: 'background:#5bc0de;'
-      style: 'color:#fff;box-shadow:0 1px 10px rgba(0,0,0,0.1);padding:5% 12px;margin:30px auto;text-align:center;text-decoration:none;outline:none;font-size:20px;'
-    container: false
-    containerFluid: false
-
-
 Neos:
   Neos:
     userInterface:
@@ -20,16 +5,3 @@ Neos:
         autoInclude:
           Jonnitto.NodeTypes:
             - 'NodeTypes/*'
-    nodeTypes:
-      groups:
-        special:
-          position: 400
-          label: 'Jonnitto.NodeTypes:NodeTypes.Groups:special'
-          collapsed: true
-    fusion:
-      autoInclude:
-        Jonnitto.NodeTypes: true
-  Flow:
-    mvc:
-      routes:
-        'Jonnitto.NodeTypes': true

@@ -1,5 +1,0 @@
-prototype(NT:NeededProperties) < prototype(Fusion:Value) {
-	property = ${property ? property : NULL}
-	check = ${this.property ? q(node).property(this.property) : true}
-	value = ${this.check || node.context.inBackend ? true : false}
-}

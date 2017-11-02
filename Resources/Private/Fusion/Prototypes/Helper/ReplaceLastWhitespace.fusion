@@ -1,6 +1,0 @@
-prototype(NT:ReplaceLastWhitespace) < prototype(Fusion:Value) {
-	tagName = null
-	regex = ${'/>(.*?)\s+(\S+)<\/' + this.tagName + '>/'}
-	replace = ${'>$1&nbsp;$2</' + this.tagName + '>'}
-	value  = ${this.tagName ? String.pregReplace(value, this.regex, this.replace) : value}
-}

@@ -1,8 +1,0 @@
-prototype(NT:IsFirstElement) < prototype(Fusion:Value) {
-	true = true
-	false = false
-	node = ${node}
-	collection = '[instanceof Neos.Neos:ContentCollection]'
-	content = '[instanceof Neos.Neos:Content]'
-	value = ${q(documentNode).children(this.collection).children(this.content).get(0) == this.node ? this.true : this.false}
-}

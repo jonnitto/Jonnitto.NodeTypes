@@ -1,9 +1,0 @@
-prototype(NT:BooleanProperty) < prototype(Fusion:Value) {
-	property = NULL
-
-	prepend = ''
-	// prepend = ${nodeTypeName}
-	divider = ${this.prepend && this.prepend != '-' ? '-' : ''}
-
-	value = ${q(node).property(this.property) ? (this.prepend + this.divider + this.property) : false}
-}

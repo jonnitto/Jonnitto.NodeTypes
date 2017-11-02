@@ -1,9 +1,0 @@
-prototype(NT:WrapIfPropertyIsSet) < prototype(Fusion:Value) {
-	property = NULL
-	append = ''
-	divider = '-'
-	prepend = ${String.toLowerCase(this.property) + this.divider}
-
-	read = ${q(node).property(this.property)}
-	value = ${this.read ? (this.prepend + this.read + this.append) : false}
-}

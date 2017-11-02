@@ -1,9 +1,0 @@
-prototype(NT:LinkAttributes) < prototype(Fusion:Attributes) {
-	@context.property = 'link'
-	rel = NT:LinRel
-	target = NT:LinkTarget
-	href = NT:LinkURI
-	class = Fusion:RawArray {
-		link = NT:LinkClass
-	}
-}
