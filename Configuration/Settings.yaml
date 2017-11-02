@@ -4,17 +4,6 @@ Jonnitto:
       defaultClassName: btn
       defaultStyle: secondary
       groupClassName: btn-group
-    Image:
-      inlineSVG: true
-      maximumWidth: 1440
-      maximumHeight: 1280
-      bleedWidth: 1920
-      bleedHeight: 1680
-      openOriginalImageInLightbox: false
-      renderRetina: true
-      lightbox:
-        class: lightbox
-        target: _blank
     Notification:
       alert: 'background:#d9534f;'
       warning: 'background:#f0ad4e;'
@@ -22,10 +11,6 @@ Jonnitto:
       style: 'color:#fff;box-shadow:0 1px 10px rgba(0,0,0,0.1);padding:5% 12px;margin:30px auto;text-align:center;text-decoration:none;outline:none;font-size:20px;'
     container: false
     containerFluid: false
-    instanceOfDocument: '[instanceof Neos.Neos:Document]'
-    prependIdentifier: id-
-    externalTarget: _blank
-    assetExternal: 'image,video,pdf'
 
 
 Neos:

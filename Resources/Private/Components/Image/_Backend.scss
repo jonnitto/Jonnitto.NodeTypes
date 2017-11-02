@@ -1,7 +1,0 @@
-.jonnitto-nodetypes-image.image-bleed {
-	@include bleedElementBackend;
-}
-
-.neos-contentcollection .neos-contentcollection .jonnitto-nodetypes-image.image-bleed {
-	@include resetBleedElementBackend;
-}
