@@ -26,10 +26,7 @@ Jonnitto:
     prependIdentifier: id-
     externalTarget: _blank
     assetExternal: 'image,video,pdf'
-    assetlist:
-      thumbnail:
-        headlineTag: h2
-        width: 200
+
 
 Neos:
   Neos:
