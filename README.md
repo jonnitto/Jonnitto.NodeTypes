@@ -1,9 +1,14 @@
-Jonnitto.NodeTypes
-==================
-
 [![Latest Stable Version](https://poser.pugx.org/jonnitto/nodetypes/v/stable)](https://packagist.org/packages/jonnitto/nodetypes)
 [![Total Downloads](https://poser.pugx.org/jonnitto/nodetypes/downloads)](https://packagist.org/packages/jonnitto/nodetypes)
 [![License](https://poser.pugx.org/jonnitto/nodetypes/license)](https://packagist.org/packages/jonnitto/nodetypes)
+[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Jonnitto.NodeTypes.svg?style=social&label=Fork)](https://github.com/jonnitto/Jonnitto.NodeTypes/fork)
+[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Jonnitto.NodeTypes.svg?style=social&label=Stars)](https://github.com/jonnitto/Jonnitto.NodeTypes/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Jonnitto.NodeTypes.svg?style=social&label=Watch)](https://github.com/jonnitto/Jonnitto.NodeTypes/subscription)
+[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
+[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+
+Jonnitto.NodeTypes
+==================
 
 Some NodeTypes for the greatest Content System on earth: [Neos](https://www.neos.io). The Elements only get rendered of there is any content.
 
