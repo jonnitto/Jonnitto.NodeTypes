@@ -31,11 +31,13 @@ class DownloadController extends \Neos\Neos\Controller\Module\AbstractModuleCont
      */
     public function downloadAction($resource='') {
         if ( empty($resource) ) {
+            header("HTTP/1.0 404 Not Found");
             exit('No resource identifier given');
         }
         /** @var FlowResource $flowResource */
         $flowResource = $this->resourceRepository->findByIdentifier($resource);
         if ( !is_object($flowResource) ) {
+            header("HTTP/1.0 404 Not Found");
             exit('Resource not found.');
         }
 
